@@ -31,6 +31,9 @@ export default function Home() {
           </Button>
         </div>
       </Card>
+      <div className="w-100 text-center mt-3">
+        <Button href="/c-quiz">C QUIZ</Button>
+      </div>
     </>
   );
 }

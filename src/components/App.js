@@ -7,6 +7,7 @@ import PrivateRoute from "./PrivateRoute";
 import Home from "./Home";
 import LogIn from "./Login";
 import Forgot from "./Forgot";
+import Cquiz from "../quiz/cquiz";
 
 function App() {
   return (
@@ -28,7 +29,8 @@ function App() {
               ></Route>
               <Route path="/signup" Component={SignUp} />
               <Route path="/login" Component={LogIn} />
-              <Route path="forgot-password" Component={Forgot} />
+              <Route path="/forgot-password" Component={Forgot} />
+              <Route path="/c-quiz" Component={Cquiz} />
             </Routes>
           </AuthProvider>
         </BrowserRouter>
