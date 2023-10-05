@@ -5,6 +5,8 @@ import StartScreen from "../components/StartScreen";
 import Question from "../components/Question";
 import NextButton from "../components/NextButton";
 import PrevButton from "../components/PrevButton";
+import Progress from "../components/Progress";
+import FinishedScreen from "../components/FinishedScreen";
 
 const initialState = {
   questions: [],
@@ -36,18 +38,26 @@ function reducer(state, action) {
       return { ...state, index: state.index + 1, answer: null };
     case "prevQuestion":
       return { ...state, index: state.index - 1, answer: null };
+    case "finish":
+      return { ...state, status: "finished" };
+    case "restart":
+      return { ...initialState, questions: state.questions, status: "ready" };
     default:
       throw new Error("Unrecognized action");
   }
 }
 
 export default function Cquiz() {
-  const [{ index, questions, status, answer }, dispatch] = useReducer(
+  const [{ index, questions, status, answer, points }, dispatch] = useReducer(
     reducer,
     initialState
   );
 
   const numberOfQuestions = questions.length;
+  const maxPossiblePoints = questions.reduce(
+    (prev, curr) => prev + curr.points,
+    0
+  );
 
   useEffect(function () {
     fetch("http://localhost:8000/questions")
@@ -70,14 +80,33 @@ export default function Cquiz() {
         )}
         {status === "active" && (
           <>
+            <Progress
+              index={index}
+              numQuestions={numberOfQuestions}
+              points={points}
+              maxPossiblePoints={maxPossiblePoints}
+              answer={answer}
+            />
             <Question
               question={questions[index]}
               dispatch={dispatch}
               answer={answer}
             />
-            <NextButton dispatch={dispatch} answer={answer} />
-            <PrevButton dispatch={dispatch} answer={answer} />
+            <NextButton
+              dispatch={dispatch}
+              answer={answer}
+              index={index}
+              numQuestions={numberOfQuestions}
+            />
+            <PrevButton dispatch={dispatch} answer={answer} index={index} />
           </>
+        )}
+        {status === "finished" && (
+          <FinishedScreen
+            points={points}
+            maxPossiblePoints={maxPossiblePoints}
+            dispatch={dispatch}
+          />
         )}
       </main>
     </div>
