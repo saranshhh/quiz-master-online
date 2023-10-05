@@ -5,7 +5,9 @@ export default function StartScreen({ name, numQuestions, dispatch }) {
     <div>
       <h2>Welcome to the {name}</h2>
       <p>{numQuestions} questions to solve in Y minutes</p>
-      <button onClick={() => dispatch({ type: "start" })}>Start</button>
+      <button className="btn" onClick={() => dispatch({ type: "start" })}>
+        Start
+      </button>
     </div>
   );
 }
