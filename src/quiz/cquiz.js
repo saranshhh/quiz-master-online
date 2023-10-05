@@ -21,6 +21,16 @@ const initialState = {
 
 const SECS_PER_QUESTION = 30;
 
+// Using the Fisher-Yates shuffle algorithm to randomly arrange the array of questions
+// This algorithm works by iterating over the array from the end to the beginning,
+// and swapping each element with a randomly selected element before it.
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
 function reducer(state, action) {
   switch (action.type) {
     case "dataRecieved":
@@ -28,6 +38,7 @@ function reducer(state, action) {
         ...question,
         attempted: false,
       }));
+      shuffleArray(questions);
       return { ...state, questions: questions, status: "ready" };
     case "dataFailed":
       return { ...state, status: "error" };
@@ -57,7 +68,11 @@ function reducer(state, action) {
     case "finish":
       return { ...state, status: "finished" };
     case "restart":
-      return { ...initialState, questions: state.questions, status: "ready" };
+      return {
+        ...initialState,
+        questions: state.questions.map((q) => ({ ...q, attempted: false })),
+        status: "ready",
+      };
     case "tick":
       return {
         ...state,
@@ -89,7 +104,6 @@ export default function Cquiz() {
     fetch("https://json.extendsclass.com/bin/ddc666608287")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         dispatch({ type: "dataRecieved", payload: data });
       })
       .catch((err) => dispatch({ type: "dataFailed" }));
