@@ -16,6 +16,7 @@ const initialState = {
   answer: null,
   points: 0,
   secondsRemaining: null,
+  numbersQs: 10,
 };
 
 const SECS_PER_QUESTION = 30;
@@ -63,6 +64,8 @@ function reducer(state, action) {
         secondsRemaining: state.secondsRemaining - 1,
         status: state.secondsRemaining === 0 ? "finished" : state.status,
       };
+    case "changeNumber":
+      return { ...state, numbersQs: action.payload };
     default:
       throw new Error("Unrecognized action");
   }
@@ -70,11 +73,11 @@ function reducer(state, action) {
 
 export default function Cquiz() {
   const [
-    { index, questions, status, answer, points, secondsRemaining },
+    { index, questions, status, answer, points, secondsRemaining, numbersQs },
     dispatch,
   ] = useReducer(reducer, initialState);
 
-  const numberOfQuestions = questions.length;
+  //const numberOfQuestions = questions.length;
   const maxPossiblePoints = questions.reduce(
     (prev, curr) => prev + curr.points,
     0
@@ -82,9 +85,13 @@ export default function Cquiz() {
 
   useEffect(function () {
     //http://localhost:8000/questions
-    fetch("https://json.extendsclass.com/bin/ba9d946f9e6a")
+    //
+    fetch("https://json.extendsclass.com/bin/ddc666608287")
       .then((res) => res.json())
-      .then((data) => dispatch({ type: "dataRecieved", payload: data }))
+      .then((data) => {
+        console.log(data);
+        dispatch({ type: "dataRecieved", payload: data });
+      })
       .catch((err) => dispatch({ type: "dataFailed" }));
   }, []); // useEffect( function, [array of variables to watch for changes] )
   return (
@@ -94,17 +101,19 @@ export default function Cquiz() {
         {status === "loading" && <Loader />}
         {status === "error" && <Error />}
         {status === "ready" && (
-          <StartScreen
-            name="cquiz"
-            numQuestions={numberOfQuestions}
-            dispatch={dispatch}
-          />
+          <>
+            <StartScreen
+              name="cquiz"
+              numQuestions={numbersQs}
+              dispatch={dispatch}
+            />
+          </>
         )}
         {status === "active" && (
           <>
             <Progress
               index={index}
-              numQuestions={numberOfQuestions}
+              numQuestions={numbersQs}
               points={points}
               maxPossiblePoints={maxPossiblePoints}
               answer={answer}
@@ -123,7 +132,7 @@ export default function Cquiz() {
                 dispatch={dispatch}
                 answer={answer}
                 index={index}
-                numQuestions={numberOfQuestions}
+                numQuestions={numbersQs}
               />
               <PrevButton dispatch={dispatch} answer={answer} index={index} />
             </footer>

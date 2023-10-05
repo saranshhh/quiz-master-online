@@ -8,6 +8,17 @@ export default function StartScreen({ name, numQuestions, dispatch }) {
       <button className="btn" onClick={() => dispatch({ type: "start" })}>
         Start
       </button>
+      <select
+        className="btn"
+        onChange={(e) =>
+          dispatch({ type: "changeNumber", payload: e.target.value })
+        }
+      >
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="35">35</option>
+        <option value="50">50</option>
+      </select>
     </div>
   );
 }

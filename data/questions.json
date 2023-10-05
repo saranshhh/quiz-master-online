@@ -1,140 +1,249 @@
 {
-    "questions": [
-      {
-        "question": "Which is the most popular JavaScript framework?",
-        "options": ["Angular", "React", "Svelte", "Vue"],
-        "correctOption": 1,
-        "points": 10
-      },
-      {
-        "question": "Which company invented React?",
-        "options": ["Google", "Apple", "Netflix", "Facebook"],
-        "correctOption": 3,
-        "points": 10
-      },
-      {
-        "question": "What's the fundamental building block of React apps?",
-        "options": ["Components", "Blocks", "Elements", "Effects"],
-        "correctOption": 0,
-        "points": 10
-      },
-      {
-        "question": "What's the name of the syntax we use to describe the UI in React components?",
-        "options": ["FBJ", "Babel", "JSX", "ES2015"],
-        "correctOption": 2,
-        "points": 10
-      },
-      {
-        "question": "How does data flow naturally in React apps?",
-        "options": [
-          "From parents to children",
-          "From children to parents",
-          "Both ways",
-          "The developers decides"
-        ],
-        "correctOption": 0,
-        "points": 10
-      },
-      {
-        "question": "How to pass data into a child component?",
-        "options": ["State", "Props", "PropTypes", "Parameters"],
-        "correctOption": 1,
-        "points": 10
-      },
-      {
-        "question": "When to use derived state?",
-        "options": [
-          "Whenever the state should not trigger a re-render",
-          "Whenever the state can be synchronized with an effect",
-          "Whenever the state should be accessible to all components",
-          "Whenever the state can be computed from another state variable"
-        ],
-        "correctOption": 3,
-        "points": 30
-      },
-      {
-        "question": "What triggers a UI re-render in React?",
-        "options": [
-          "Running an effect",
-          "Passing props",
-          "Updating state",
-          "Adding event listeners to DOM elements"
-        ],
-        "correctOption": 2,
-        "points": 20
-      },
-      {
-        "question": "When do we directly \"touch\" the DOM in React?",
-        "options": [
-          "When we need to listen to an event",
-          "When we need to change the UI",
-          "When we need to add styles",
-          "Almost never"
-        ],
-        "correctOption": 3,
-        "points": 20
-      },
-      {
-        "question": "In what situation do we use a callback to update state?",
-        "options": [
-          "When updating the state will be slow",
-          "When the updated state is very data-intensive",
-          "When the state update should happen faster",
-          "When the new state depends on the previous state"
-        ],
-        "correctOption": 3,
-        "points": 30
-      },
-      {
-        "question": "If we pass a function to useState, when will that function be called?",
-        "options": [
-          "On each re-render",
-          "Each time we update the state",
-          "Only on the initial render",
-          "The first time we update the state"
-        ],
-        "correctOption": 2,
-        "points": 30
-      },
-      {
-        "question": "Which hook to use for an API request on the component's initial render?",
-        "options": ["useState", "useEffect", "useRef", "useReducer"],
-        "correctOption": 1,
-        "points": 10
-      },
-      {
-        "question": "Which variables should go into the useEffect dependency array?",
-        "options": [
-          "Usually none",
-          "All our state variables",
-          "All state and props referenced in the effect",
-          "All variables needed for clean up"
-        ],
-        "correctOption": 2,
-        "points": 30
-      },
-      {
-        "question": "An effect will always run on the initial render.",
-        "options": [
-          "True",
-          "It depends on the dependency array",
-          "False",
-          "In depends on the code in the effect"
-        ],
-        "correctOption": 0,
-        "points": 30
-      },
-      {
-        "question": "When will an effect run if it doesn't have a dependency array?",
-        "options": [
-          "Only when the component mounts",
-          "Only when the component unmounts",
-          "The first time the component re-renders",
-          "Each time the component is re-rendered"
-        ],
-        "correctOption": 3,
-        "points": 20
-      }
-    ]
-  }
-  
+  "questions": [
+    {
+      "question": "Which is the most popular JavaScript framework?",
+      "options": ["Angular", "React", "Svelte", "Vue"],
+      "correctOption": 1,
+      "points": 10
+    },
+    {
+      "question": "Which company invented React?",
+      "options": ["Google", "Apple", "Netflix", "Facebook"],
+      "correctOption": 3,
+      "points": 10
+    },
+    {
+      "question": "What's the fundamental building block of React apps?",
+      "options": ["Components", "Blocks", "Elements", "Effects"],
+      "correctOption": 0,
+      "points": 10
+    },
+    {
+      "question": "What's the name of the syntax we use to describe the UI in React components?",
+      "options": ["FBJ", "Babel", "JSX", "ES2015"],
+      "correctOption": 2,
+      "points": 10
+    },
+    {
+      "question": "How does data flow naturally in React apps?",
+      "options": [
+        "From parents to children",
+        "From children to parents",
+        "Both ways",
+        "The developers decides"
+      ],
+      "correctOption": 0,
+      "points": 10
+    },
+    {
+      "question": "How to pass data into a child component?",
+      "options": ["State", "Props", "PropTypes", "Parameters"],
+      "correctOption": 1,
+      "points": 10
+    },
+    {
+      "question": "When to use derived state?",
+      "options": [
+        "Whenever the state should not trigger a re-render",
+        "Whenever the state can be synchronized with an effect",
+        "Whenever the state should be accessible to all components",
+        "Whenever the state can be computed from another state variable"
+      ],
+      "correctOption": 3,
+      "points": 30
+    },
+    {
+      "question": "What triggers a UI re-render in React?",
+      "options": [
+        "Running an effect",
+        "Passing props",
+        "Updating state",
+        "Adding event listeners to DOM elements"
+      ],
+      "correctOption": 2,
+      "points": 20
+    },
+    {
+      "question": "When do we directly \"touch\" the DOM in React?",
+      "options": [
+        "When we need to listen to an event",
+        "When we need to change the UI",
+        "When we need to add styles",
+        "Almost never"
+      ],
+      "correctOption": 3,
+      "points": 20
+    },
+    {
+      "question": "In what situation do we use a callback to update state?",
+      "options": [
+        "When updating the state will be slow",
+        "When the updated state is very data-intensive",
+        "When the state update should happen faster",
+        "When the new state depends on the previous state"
+      ],
+      "correctOption": 3,
+      "points": 30
+    },
+    {
+      "question": "If we pass a function to useState, when will that function be called?",
+      "options": [
+        "On each re-render",
+        "Each time we update the state",
+        "Only on the initial render",
+        "The first time we update the state"
+      ],
+      "correctOption": 2,
+      "points": 30
+    },
+    {
+      "question": "Which hook to use for an API request on the component's initial render?",
+      "options": ["useState", "useEffect", "useRef", "useReducer"],
+      "correctOption": 1,
+      "points": 10
+    },
+    {
+      "question": "Which variables should go into the useEffect dependency array?",
+      "options": [
+        "Usually none",
+        "All our state variables",
+        "All state and props referenced in the effect",
+        "All variables needed for clean up"
+      ],
+      "correctOption": 2,
+      "points": 30
+    },
+    {
+      "question": "An effect will always run on the initial render.",
+      "options": [
+        "True",
+        "It depends on the dependency array",
+        "False",
+        "In depends on the code in the effect"
+      ],
+      "correctOption": 0,
+      "points": 30
+    },
+    {
+      "question": "When will an effect run if it doesn't have a dependency array?",
+      "options": [
+        "Only when the component mounts",
+        "Only when the component unmounts",
+        "The first time the component re-renders",
+        "Each time the component is re-rendered"
+      ],
+      "correctOption": 3,
+      "points": 20
+    },
+    {
+      "question": "What is the purpose of the map() function in JavaScript?",
+      "options": [
+        "To create a new array with the results of calling a provided function on every element in the array.",
+        "To remove elements from an array.",
+        "To add elements to the end of an array.",
+        "To sort the elements of an array."
+      ],
+      "correctOption": 0,
+      "points": 10
+    },
+    {
+      "question": "Which of the following is not a valid primitive data type in JavaScript?",
+      "options": [
+        "Number",
+        "String",
+        "Object",
+        "Boolean"
+      ],
+      "correctOption": 2,
+      "points": 10
+    },
+    {
+      "question": "What is the purpose of the localStorage object in web development?",
+      "options": [
+        "To store data on the server.",
+        "To store session-specific data.",
+        "To store data locally in the user's browser.",
+        "To store data in cookies."
+      ],
+      "correctOption": 2,
+      "points": 10
+    },
+    {
+      "question": "What does CSS stand for in web development?",
+      "options": [
+        "Cascading Style Sheet",
+        "Computer Style Sheet",
+        "Colorful Style Sheet",
+        "Creative Style Sheet"
+      ],
+      "correctOption": 0,
+      "points": 10
+    },
+    {
+      "question": "Which HTTP status code indicates a successful request in the HTTP protocol?",
+      "options": [
+        "200 OK",
+        "404 Not Found",
+        "500 Internal Server Error",
+        "302 Found"
+      ],
+      "correctOption": 0,
+      "points": 10
+    },
+    {
+      "question": "What does the acronym API stand for in the context of web development?",
+      "options": [
+        "Application Programming Interface",
+        "Advanced Programming Interface",
+        "Application Protocol Interface",
+        "Advanced Protocol Interface"
+      ],
+      "correctOption": 0,
+      "points": 10
+    },
+    {
+      "question": "In the context of databases, what does SQL stand for?",
+      "options": [
+        "Structured Query Language",
+        "Simple Query Language",
+        "System Query Language",
+        "Standardized Query Language"
+      ],
+      "correctOption": 0,
+      "points": 10
+    },
+    {
+      "question": "Which programming language is commonly used for server-side web development?",
+      "options": [
+        "JavaScript",
+        "Python",
+        "HTML",
+        "CSS"
+      ],
+      "correctOption": 1,
+      "points": 10
+    },
+    {
+      "question": "What is the primary function of a web server?",
+      "options": [
+        "To display web pages in a web browser.",
+        "To store and manage databases.",
+        "To process and respond to HTTP requests.",
+        "To create and design web pages."
+      ],
+      "correctOption": 2,
+      "points": 10
+    },
+    {
+      "question": "What is the purpose of the try...catch statement in JavaScript?",
+      "options": [
+        "To define a function.",
+        "To declare a variable.",
+        "To handle exceptions and errors.",
+        "To create a loop."
+      ],
+      "correctOption": 2,
+      "points": 10
+    }
+  ]
+}
