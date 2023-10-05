@@ -6,6 +6,7 @@ import Question from "../components/Question";
 import NextButton from "../components/NextButton";
 import PrevButton from "../components/PrevButton";
 import Progress from "../components/Progress";
+import Timer from "../components/Timer";
 import FinishedScreen from "../components/FinishedScreen";
 
 const initialState = {
@@ -14,7 +15,10 @@ const initialState = {
   index: 0,
   answer: null,
   points: 0,
+  secondsRemaining: null,
 };
+
+const SECS_PER_QUESTION = 30;
 
 function reducer(state, action) {
   switch (action.type) {
@@ -23,7 +27,11 @@ function reducer(state, action) {
     case "dataFailed":
       return { ...state, status: "error" };
     case "start":
-      return { ...state, status: "active" };
+      return {
+        ...state,
+        status: "active",
+        secondsRemaining: state.questions.length * SECS_PER_QUESTION,
+      };
     case "newanswer":
       const question = state.questions.at(state.index);
       return {
@@ -42,16 +50,22 @@ function reducer(state, action) {
       return { ...state, status: "finished" };
     case "restart":
       return { ...initialState, questions: state.questions, status: "ready" };
+    case "tick":
+      return {
+        ...state,
+        secondsRemaining: state.secondsRemaining - 1,
+        status: state.secondsRemaining === 0 ? "finish" : state.status,
+      };
     default:
       throw new Error("Unrecognized action");
   }
 }
 
 export default function Cquiz() {
-  const [{ index, questions, status, answer, points }, dispatch] = useReducer(
-    reducer,
-    initialState
-  );
+  const [
+    { index, questions, status, answer, points, secondsRemaining },
+    dispatch,
+  ] = useReducer(reducer, initialState);
 
   const numberOfQuestions = questions.length;
   const maxPossiblePoints = questions.reduce(
@@ -92,13 +106,19 @@ export default function Cquiz() {
               dispatch={dispatch}
               answer={answer}
             />
-            <NextButton
-              dispatch={dispatch}
-              answer={answer}
-              index={index}
-              numQuestions={numberOfQuestions}
-            />
-            <PrevButton dispatch={dispatch} answer={answer} index={index} />
+            <footer>
+              <Timer
+                dispatch={dispatch}
+                secondsRemaining={secondsRemaining}
+              ></Timer>
+              <NextButton
+                dispatch={dispatch}
+                answer={answer}
+                index={index}
+                numQuestions={numberOfQuestions}
+              />
+              <PrevButton dispatch={dispatch} answer={answer} index={index} />
+            </footer>
           </>
         )}
         {status === "finished" && (
