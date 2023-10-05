@@ -2,6 +2,14 @@ import React from "react";
 
 export default function Question({ question, dispatch, answer }) {
   const hasAnswered = answer !== null;
+  if (question.attempted === true) {
+    return (
+      <div>
+        <h4>{question.question}</h4>
+        <p>Correct Answer: {question.options[question.correctOption]} </p>
+      </div>
+    );
+  }
 
   return (
     <div>

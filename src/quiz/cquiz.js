@@ -23,7 +23,11 @@ const SECS_PER_QUESTION = 30;
 function reducer(state, action) {
   switch (action.type) {
     case "dataRecieved":
-      return { ...state, questions: action.payload, status: "ready" };
+      const questions = action.payload.map((question) => ({
+        ...question,
+        attempted: false,
+      }));
+      return { ...state, questions: questions, status: "ready" };
     case "dataFailed":
       return { ...state, status: "error" };
     case "start":
@@ -41,6 +45,9 @@ function reducer(state, action) {
           action.payload === question.correctOption
             ? state.points + question.points
             : state.points,
+        questions: state.questions.map((q, i) =>
+          i === state.index ? { ...q, attempted: true } : q
+        ),
       };
     case "nextQuestion":
       return { ...state, index: state.index + 1, answer: null };
@@ -54,7 +61,7 @@ function reducer(state, action) {
       return {
         ...state,
         secondsRemaining: state.secondsRemaining - 1,
-        status: state.secondsRemaining === 0 ? "finish" : state.status,
+        status: state.secondsRemaining === 0 ? "finished" : state.status,
       };
     default:
       throw new Error("Unrecognized action");
