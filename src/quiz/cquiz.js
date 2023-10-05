@@ -82,7 +82,7 @@ export default function Cquiz() {
 
   useEffect(function () {
     //http://localhost:8000/questions
-    fetch("https://json.extendsclass.com/bin/e0d169b31fca")
+    fetch("https://json.extendsclass.com/bin/ba9d946f9e6a")
       .then((res) => res.json())
       .then((data) => dispatch({ type: "dataRecieved", payload: data }))
       .catch((err) => dispatch({ type: "dataFailed" }));
