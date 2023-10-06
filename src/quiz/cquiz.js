@@ -8,6 +8,7 @@ import PrevButton from "../components/PrevButton";
 import Progress from "../components/Progress";
 import Timer from "../components/Timer";
 import FinishedScreen from "../components/FinishedScreen";
+import SideView from "../components/SideView";
 
 const initialState = {
   questions: [],
@@ -59,8 +60,6 @@ function reducer(state, action) {
             ? state.points + question.points
             : state.points,
         questions: state.questions.map((q, i) => {
-          console.log(q);
-          console.log(i);
           return i === state.index
             ? { ...q, attempted: true, attemptedOption: action.payload }
             : q;
@@ -94,6 +93,8 @@ function reducer(state, action) {
         numbersQs: action.payload,
         secondsRemaining: Number(action.payload) * SECS_PER_QUESTION,
       };
+    case "gotoQuestion":
+      return { ...state, index: action.payload, answer: null };
     default:
       throw new Error("Unrecognized action");
   }
@@ -113,7 +114,7 @@ export default function Cquiz() {
 
   useEffect(function () {
     //http://localhost:8000/questions
-    //
+
     fetch("https://json.extendsclass.com/bin/ddc666608287")
       .then((res) => res.json())
       .then((data) => {
@@ -123,7 +124,7 @@ export default function Cquiz() {
   }, []); // useEffect( function, [array of variables to watch for changes] )
   return (
     <div>
-      cquiz
+      C QUIZ
       <main>
         {status === "loading" && <Loader />}
         {status === "error" && <Error />}
@@ -150,6 +151,11 @@ export default function Cquiz() {
               question={questions[index]}
               dispatch={dispatch}
               answer={answer}
+            />
+            <SideView
+              numQuestions={numbersQs}
+              dispatch={dispatch}
+              index={index}
             />
             <footer>
               <Timer

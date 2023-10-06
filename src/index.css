@@ -143,6 +143,11 @@
   .btn-ui {
     float: right;
   }
+
+  .current-q {
+    background-color: #a0f361;
+  color: #000;
+  }
   
   .options {
     display: flex;
