@@ -1,10 +1,18 @@
 import React from "react";
 
-export default function StartScreen({ name, numQuestions, dispatch }) {
+export default function StartScreen({
+  name,
+  numQuestions,
+  dispatch,
+  secondsRemaining,
+}) {
+  const mins = Math.floor(secondsRemaining / 60);
   return (
     <div>
       <h2>Welcome to the {name}</h2>
-      <p>{numQuestions} questions to solve in Y minutes</p>
+      <p>
+        {numQuestions} questions to solve in {mins} minutes
+      </p>
       <button className="btn" onClick={() => dispatch({ type: "start" })}>
         Start
       </button>

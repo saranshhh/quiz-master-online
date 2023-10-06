@@ -15,7 +15,7 @@ const initialState = {
   index: 0,
   answer: null,
   points: 0,
-  secondsRemaining: null,
+  secondsRemaining: 300,
   numbersQs: 10,
 };
 
@@ -37,6 +37,7 @@ function reducer(state, action) {
       const questions = action.payload.map((question) => ({
         ...question,
         attempted: false,
+        attemptedOption: null,
       }));
       shuffleArray(questions);
       return { ...state, questions: questions, status: "ready" };
@@ -46,10 +47,10 @@ function reducer(state, action) {
       return {
         ...state,
         status: "active",
-        secondsRemaining: state.questions.length * SECS_PER_QUESTION,
+        secondsRemaining: Number(state.numbersQs) * SECS_PER_QUESTION,
       };
     case "newanswer":
-      const question = state.questions.at(state.index);
+      const question = state.questions[state.index];
       return {
         ...state,
         answer: action.payload,
@@ -57,9 +58,13 @@ function reducer(state, action) {
           action.payload === question.correctOption
             ? state.points + question.points
             : state.points,
-        questions: state.questions.map((q, i) =>
-          i === state.index ? { ...q, attempted: true } : q
-        ),
+        questions: state.questions.map((q, i) => {
+          console.log(q);
+          console.log(i);
+          return i === state.index
+            ? { ...q, attempted: true, attemptedOption: action.payload }
+            : q;
+        }),
       };
     case "nextQuestion":
       return { ...state, index: state.index + 1, answer: null };
@@ -70,7 +75,11 @@ function reducer(state, action) {
     case "restart":
       return {
         ...initialState,
-        questions: state.questions.map((q) => ({ ...q, attempted: false })),
+        questions: state.questions.map((q) => ({
+          ...q,
+          attempted: false,
+          attemptedOption: null,
+        })),
         status: "ready",
       };
     case "tick":
@@ -80,7 +89,11 @@ function reducer(state, action) {
         status: state.secondsRemaining === 0 ? "finished" : state.status,
       };
     case "changeNumber":
-      return { ...state, numbersQs: action.payload };
+      return {
+        ...state,
+        numbersQs: action.payload,
+        secondsRemaining: Number(action.payload) * SECS_PER_QUESTION,
+      };
     default:
       throw new Error("Unrecognized action");
   }
@@ -120,6 +133,7 @@ export default function Cquiz() {
               name="cquiz"
               numQuestions={numbersQs}
               dispatch={dispatch}
+              secondsRemaining={secondsRemaining}
             />
           </>
         )}
