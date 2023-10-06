@@ -7,23 +7,27 @@ export default function Question({ question, dispatch, answer }) {
       <div>
         <h4>{question.question}</h4>
         <div>
-          {question.options.map((option, index) => (
-            <button
-              className={`btn btn-option ${answer === index ? "answer" : ""} ${
-                hasAnswered
-                  ? question.correctOption === index
+          {question.options.map((option, index) => {
+            return (
+              <button
+                className={`btn btn-option ${
+                  answer === index ? "answer" : ""
+                } ${
+                  question.correctOption === index
                     ? "correct"
-                    : "wrong"
-                  : ""
-              }`}
-              key={option}
-              disabled
-            >
-              {option}
-            </button>
-          ))}
+                    : question.attemptedOption === index
+                    ? "wrong"
+                    : ""
+                }`}
+                key={option}
+                disabled
+              >
+                {option}
+              </button>
+            );
+          })}
         </div>
-        <p>Correct Answer: {question.options[question.correctOption]} </p>
+        <p>Correct Answer: {question.options[question.correctOption]}</p>
       </div>
     );
   }
