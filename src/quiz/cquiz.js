@@ -156,6 +156,7 @@ export default function Cquiz() {
               numQuestions={numbersQs}
               dispatch={dispatch}
               index={index}
+              question={questions[index]}
             />
             <footer>
               <Timer

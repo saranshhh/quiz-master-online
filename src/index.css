@@ -145,7 +145,7 @@
   }
 
   .current-q {
-    background-color: #9261f3;
+    background-color: #ffdcdc;
   color: #000;
   }
   
@@ -322,9 +322,9 @@
 }
 
   .correct-q {
-    background-color: #9261f3;
+    background-color: #66f361;
   }
 
   .incorrect-q {
-    background-color: #9261f3;
+    background-color: #f36161;
   }

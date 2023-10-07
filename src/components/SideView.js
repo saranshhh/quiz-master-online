@@ -6,7 +6,15 @@ export default function SideView({ numQuestions, dispatch, index, question }) {
     <div>
       {buttons.map((i) => (
         <button
-          className={`btn ${i === index ? "current-q" : ""} `}
+          className={`btn ${i === index ? "current-q" : ""} ${
+            i === index && question.attemptedOption === question.correctOption
+              ? "correct-q"
+              : i === index &&
+                question.attemptedOption !== null &&
+                question.attemptedOption !== question.correctOption
+              ? "incorrect-q"
+              : ""
+          }`}
           key={i}
           onClick={() => {
             dispatch({ type: "gotoQuestion", payload: i });
