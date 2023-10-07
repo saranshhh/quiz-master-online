@@ -27,7 +27,6 @@ export default function Question({ question, dispatch, answer }) {
             );
           })}
         </div>
-        <p>Correct Answer: {question.options[question.correctOption]}</p>
       </div>
     );
   }

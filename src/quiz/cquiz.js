@@ -113,9 +113,9 @@ export default function Cquiz() {
   );
 
   useEffect(function () {
-    //http://localhost:8000/questions
-
-    fetch("https://json.extendsclass.com/bin/ddc666608287")
+    //
+    //https://json.extendsclass.com/bin/ddc666608287
+    fetch("http://localhost:8000/questions")
       .then((res) => res.json())
       .then((data) => {
         dispatch({ type: "dataRecieved", payload: data });

@@ -145,7 +145,7 @@
   }
 
   .current-q {
-    background-color: #a0f361;
+    background-color: #9261f3;
   color: #000;
   }
   
@@ -262,4 +262,69 @@
     font-size: inherit;
     padding: 0.8rem;
   }
-  
+
+  /* Center the login container vertically and horizontally */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Style the login card */
+.login-card {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Style the login button */
+.login-button {
+  background-color: #007bff;
+  color: #fff;
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+/* Style the forgot password link */
+.login-card a {
+  color: #007bff;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.login-card a:hover {
+  text-decoration: underline;
+}
+
+/* Style the "Need an account?" link */
+.login-container .w-100 a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-container .w-100 a:hover {
+  text-decoration: underline;
+}
+
+  .correct-q {
+    background-color: #9261f3;
+  }
+
+  .incorrect-q {
+    background-color: #9261f3;
+  }
