@@ -8,25 +8,34 @@ export default function StartScreen({
 }) {
   const mins = Math.floor(secondsRemaining / 60);
   return (
-    <div>
-      <h2>Welcome to the {name}</h2>
-      <p>
+    <div style={{ textAlign: "center" }}>
+      <h1>Welcome to the quiz on {name}</h1>
+      <br></br>
+      <h5>
         {numQuestions} questions to solve in {mins} minutes
-      </p>
-      <button className="btn" onClick={() => dispatch({ type: "start" })}>
-        Start
-      </button>
-      <select
-        className="btn"
-        onChange={(e) =>
-          dispatch({ type: "changeNumber", payload: e.target.value })
-        }
-      >
-        <option value="10">10</option>
-        <option value="20">20</option>
-        <option value="35">35</option>
-        <option value="50">50</option>
-      </select>
+      </h5>
+
+      <br></br>
+      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+        <button
+          className="btn buttonh"
+          buttonh
+          onClick={() => dispatch({ type: "start" })}
+        >
+          Start
+        </button>
+        <select
+          className="btn buttonh"
+          onChange={(e) =>
+            dispatch({ type: "changeNumber", payload: e.target.value })
+          }
+        >
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="35">35</option>
+          <option value="50">50</option>
+        </select>
+      </div>
     </div>
   );
 }

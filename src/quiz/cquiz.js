@@ -124,14 +124,13 @@ export default function Cquiz() {
   }, []); // useEffect( function, [array of variables to watch for changes] )
   return (
     <div>
-      C QUIZ
       <main>
         {status === "loading" && <Loader />}
         {status === "error" && <Error />}
         {status === "ready" && (
           <>
             <StartScreen
-              name="cquiz"
+              name="C Programming Language!"
               numQuestions={numbersQs}
               dispatch={dispatch}
               secondsRemaining={secondsRemaining}
@@ -140,6 +139,22 @@ export default function Cquiz() {
         )}
         {status === "active" && (
           <>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                paddingBottom: "1rem",
+              }}
+            >
+              <PrevButton dispatch={dispatch} answer={answer} index={index} />
+              <Timer dispatch={dispatch} secondsRemaining={secondsRemaining} />
+              <NextButton
+                dispatch={dispatch}
+                answer={answer}
+                index={index}
+                numQuestions={numbersQs}
+              />
+            </div>
             <Progress
               index={index}
               numQuestions={numbersQs}
@@ -158,19 +173,9 @@ export default function Cquiz() {
               index={index}
               question={questions[index]}
             />
-            <footer>
-              <Timer
-                dispatch={dispatch}
-                secondsRemaining={secondsRemaining}
-              ></Timer>
-              <NextButton
-                dispatch={dispatch}
-                answer={answer}
-                index={index}
-                numQuestions={numbersQs}
-              />
-              <PrevButton dispatch={dispatch} answer={answer} index={index} />
-            </footer>
+            <footer
+              style={{ display: "flex", justifyContent: "space-between" }}
+            ></footer>
           </>
         )}
         {status === "finished" && (

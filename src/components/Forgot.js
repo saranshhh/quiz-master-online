@@ -31,16 +31,25 @@ function Forgot() {
     <>
       <Card>
         <Card.Body>
-          <h2 className="text-center mb-4">Password Reset</h2>
+          <h1 className="text-center mb-4">Password Reset</h1>
           {error && <Alert variant="danger">{error}</Alert>}
           {message && <Alert variant="success">{message}</Alert>}
           <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
+            <Form.Group id="email" >
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailref} required></Form.Control>
+              <Form.Control
+                type="email"
+                ref={emailref}
+                style={{ marginBottom: "1rem" }}
+                required
+              ></Form.Control>
             </Form.Group>
 
-            <Button type="submit" disabled={loading}>
+            <Button
+              type="submit"
+              disabled={loading}
+              style={{ fontSize: "1.2rem", padding: "0.7rem 1.5rem" }}
+            >
               Reset Password
             </Button>
           </Form>

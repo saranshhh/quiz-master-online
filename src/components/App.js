@@ -13,9 +13,9 @@ function App() {
   return (
     <Container
       className="d-flex align-items-center justify-content-center"
-      style={{ minHeight: "10vh" }}
+      style={{ minHeight: "100vh" }}
     >
-      <div className="w-50" style={{ maxWidth: "900px" }}>
+      <div className="w-100" style={{ maxWidth: "50rem" }}>
         <BrowserRouter>
           <AuthProvider>
             <Routes>

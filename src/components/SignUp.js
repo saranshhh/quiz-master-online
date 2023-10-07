@@ -35,12 +35,17 @@ function SignUp() {
     <>
       <Card>
         <Card.Body>
-          <h2 className="text-center mb-4">Sign Up</h2>
+          <h1 className="text-center mb-auto">Sign Up</h1>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailref} required></Form.Control>
+              <Form.Control
+                type="email"
+                ref={emailref}
+                style={{ marginBottom: "1rem" }}
+                required
+              ></Form.Control>
             </Form.Group>
 
             <Form.Group id="password">
@@ -49,18 +54,24 @@ function SignUp() {
                 type="password"
                 ref={passwordref}
                 required
+                style={{ marginBottom: "1rem" }}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group id="password-confirm">
               <Form.Label>Password Confirmation</Form.Label>
               <Form.Control
+                style={{ marginBottom: "1rem" }}
                 type="password"
                 ref={passwordConfirmref}
                 required
               ></Form.Control>
             </Form.Group>
-            <Button type="submit" disabled={loading}>
+            <Button
+              type="submit"
+              disabled={loading}
+              style={{ fontSize: "1.2rem", padding: "0.7rem 1.5rem" }}
+            >
               Sign Up
             </Button>
           </Form>
