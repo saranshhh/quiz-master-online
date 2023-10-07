@@ -1,8 +1,13 @@
 # Getting Started with Quiz Master Online (QMO)
 
 This project is hosted on netlify, and the link to access for the demo version of the app:
-[Demo Link](https://master--effulgent-brioche-034496.netlify.app/login)
-[!NOTE]  The Quiz feature may show any error, since the questions are currently hosted on my local computer development server.
+
+[Demo Link](https://master--effulgent-brioche-034496.netlify.app/login) 
+
+> **Warning:**
+> The above link may be a older deployed version of the project, to find the latest, [click here & login to netlify to access latest deploy from github](https://app.netlify.com/sites/effulgent-brioche-034496/deploys)
+
+**NOTE:  The Quiz feature may show any error, since the questions are currently hosted on my local computer development server.**
 
 ## Log In & Sign Up
 
