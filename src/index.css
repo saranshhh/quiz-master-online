@@ -210,3 +210,25 @@
     background-color: #ff6767;
     border: 2px solid #ff6767;
 }
+
+/* Define styles for code in Theme 1 */
+.code-theme-1 {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: monospace;
+}
+
+/* Define styles for code in Theme 2 */
+.code-theme-2 {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  font-family: monospace;
+}
+
+/* Add more code themes as needed */

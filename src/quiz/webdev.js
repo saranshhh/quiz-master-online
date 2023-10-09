@@ -100,7 +100,7 @@ function reducer(state, action) {
   }
 }
 
-export default function Cquiz() {
+export default function WebDev() {
   const [
     { index, questions, status, answer, points, secondsRemaining, numbersQs },
     dispatch,
@@ -115,7 +115,7 @@ export default function Cquiz() {
   useEffect(function () {
     //
     //https://json.extendsclass.com/bin/ddc666608287
-    fetch("http://localhost:8000/questions")
+    fetch("http://localhost:8000/questions_web")
       .then((res) => res.json())
       .then((data) => {
         dispatch({ type: "dataRecieved", payload: data });
@@ -130,7 +130,7 @@ export default function Cquiz() {
         {status === "ready" && (
           <>
             <StartScreen
-              name="C Programming Language!"
+              name="Web Dev!"
               numQuestions={numbersQs}
               dispatch={dispatch}
               secondsRemaining={secondsRemaining}

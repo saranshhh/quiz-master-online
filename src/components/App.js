@@ -7,35 +7,44 @@ import PrivateRoute from "./PrivateRoute";
 import Home from "./Home";
 import LogIn from "./Login";
 import Forgot from "./Forgot";
-import Cquiz from "../quiz/cquiz";
+import WebDev from "../quiz/webdev";
+import Java from "../quiz/java";
+import AppNavBar from "./AppNavBar";
+import Python from "../quiz/python";
 
 function App() {
   return (
-    <Container
-      className="d-flex align-items-center justify-content-center"
-      style={{ minHeight: "100vh" }}
-    >
-      <div className="w-100" style={{ maxWidth: "50rem" }}>
-        <BrowserRouter>
-          <AuthProvider>
-            <Routes>
-              <Route
-                path="/"
-                element={
-                  <PrivateRoute>
-                    <Home />
-                  </PrivateRoute>
-                }
-              ></Route>
-              <Route path="/signup" Component={SignUp} />
-              <Route path="/login" Component={LogIn} />
-              <Route path="/forgot-password" Component={Forgot} />
-              <Route path="/c-quiz" Component={Cquiz} />
-            </Routes>
-          </AuthProvider>
-        </BrowserRouter>
-      </div>
-    </Container>
+    <>
+      <AppNavBar />
+
+      <Container
+        className="d-flex align-items-center justify-content-center"
+        style={{ minHeight: "100vh" }}
+      >
+        <div className="w-100" style={{ maxWidth: "50rem" }}>
+          <BrowserRouter>
+            <AuthProvider>
+              <Routes>
+                <Route
+                  path="/"
+                  element={
+                    <PrivateRoute>
+                      <Home />
+                    </PrivateRoute>
+                  }
+                ></Route>
+                <Route path="/signup" Component={SignUp} />
+                <Route path="/login" Component={LogIn} />
+                <Route path="/forgot-password" Component={Forgot} />
+                <Route path="/web-dev-quiz" Component={WebDev} />
+                <Route path="/java-quiz" Component={Java} />
+                <Route path="/python-quiz" Component={Python} />
+              </Routes>
+            </AuthProvider>
+          </BrowserRouter>
+        </div>
+      </Container>
+    </>
   );
 }
 

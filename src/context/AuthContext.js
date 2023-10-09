@@ -26,6 +26,7 @@ export function AuthProvider({ children }) {
       .catch((err) => {
         console.log(err.code);
         console.log(err.message);
+        alert("Something went wrong!");
       });
   }
 
@@ -39,6 +40,7 @@ export function AuthProvider({ children }) {
       .catch((err) => {
         console.log(err.code);
         console.log(err.message);
+        alert("Something went wrong!");
       });
   }
 
@@ -54,6 +56,7 @@ export function AuthProvider({ children }) {
       .catch((err) => {
         console.log(err.code);
         console.log(err.message);
+        alert("Invalid User Credentials!");
       });
   }
 
@@ -68,6 +71,7 @@ export function AuthProvider({ children }) {
       .catch((err) => {
         console.log(err.code);
         console.log(err.message);
+        alert("Something Went Wrong!");
       });
   }
 
