@@ -6,6 +6,15 @@ export default function Question({ question, dispatch, answer }) {
     return (
       <div>
         <h4>{question.question}</h4>
+        {question.code !== null && (
+          <div class="quiz-question">
+            <p>Here is a code snippet:</p>
+            <pre class="code-theme-1">
+              <code>{question.code}</code>
+            </pre>
+          </div>
+        )}
+
         <div>
           {question.options.map((option, index) => {
             return (

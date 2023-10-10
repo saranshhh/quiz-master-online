@@ -167,6 +167,7 @@ export default function Python() {
               dispatch={dispatch}
               answer={answer}
             />
+  
             <SideView
               numQuestions={numbersQs}
               dispatch={dispatch}
