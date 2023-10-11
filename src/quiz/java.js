@@ -100,7 +100,7 @@ function reducer(state, action) {
   }
 }
 
-export default function Java() {
+export default function Java({ cUser }) {
   const [
     { index, questions, status, answer, points, secondsRemaining, numbersQs },
     dispatch,
@@ -134,6 +134,7 @@ export default function Java() {
               numQuestions={numbersQs}
               dispatch={dispatch}
               secondsRemaining={secondsRemaining}
+              cUser={cUser}
             />
           </>
         )}

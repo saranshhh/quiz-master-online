@@ -5,11 +5,14 @@ export default function StartScreen({
   numQuestions,
   dispatch,
   secondsRemaining,
+  cUser,
 }) {
   const mins = Math.floor(secondsRemaining / 60);
   return (
     <div style={{ textAlign: "center" }}>
-      <h1>Welcome to the quiz on {name}</h1>
+      <h1>
+        Welcome {cUser},to the quiz on {name}
+      </h1>
       <br></br>
       <h5>
         {numQuestions} questions to solve in {mins} minutes

@@ -14,7 +14,7 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }) {
-  const [currentUser, setCurrentUser] = useState();
+  const [currentUser, setCurrentUser] = useState("");
 
   function reset(email) {
     sendPasswordResetEmail(auth, email)
@@ -64,8 +64,8 @@ export function AuthProvider({ children }) {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed up
-        const user = userCredential.user;
-        setCurrentUser(user);
+        // const user = userCredential.user;
+        // setCurrentUser(user);
         // ...
       })
       .catch((err) => {

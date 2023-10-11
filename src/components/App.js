@@ -13,6 +13,7 @@ import AppNavBar from "./AppNavBar";
 import Python from "../quiz/python";
 
 function App() {
+  //let cUser = User();
   return (
     <>
       <AppNavBar />
@@ -33,12 +34,12 @@ function App() {
                     </PrivateRoute>
                   }
                 ></Route>
-                <Route path="/signup" Component={SignUp} />
-                <Route path="/login" Component={LogIn} />
-                <Route path="/forgot-password" Component={Forgot} />
-                <Route path="/web-dev-quiz" Component={WebDev} />
-                <Route path="/java-quiz" Component={Java} />
-                <Route path="/python-quiz" Component={Python} />
+                <Route path="/signup" element={<SignUp />} />
+                <Route path="/login" element={<LogIn />} />
+                <Route path="/forgot-password" element={<Forgot />} />
+                <Route path="/web-dev-quiz" element={<WebDev />} />
+                <Route path="/java-quiz" element={<Java />} />
+                <Route path="/python-quiz" element={<Python />} />
               </Routes>
             </AuthProvider>
           </BrowserRouter>
