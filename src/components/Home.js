@@ -51,7 +51,7 @@ export default function Home() {
   return (
     <>
       {status === "webdev" && <WebDev cUser={currUser} />}
-      {status === "java" && <Java cUser={currUser} />}
+      {status === "java" && <Java cUser={currUser} quizStatus={status}/>}
       {status === "python" && <Python cUser={currUser} />}
       {status === "welcome" && (
         <>

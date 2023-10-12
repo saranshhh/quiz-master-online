@@ -37,9 +37,9 @@ function App() {
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/login" element={<LogIn />} />
                 <Route path="/forgot-password" element={<Forgot />} />
-                <Route path="/web-dev-quiz" element={<WebDev />} />
+                {/* <Route path="/web-dev-quiz" element={<WebDev />} />
                 <Route path="/java-quiz" element={<Java />} />
-                <Route path="/python-quiz" element={<Python />} />
+                <Route path="/python-quiz" element={<Python />} /> */}
               </Routes>
             </AuthProvider>
           </BrowserRouter>

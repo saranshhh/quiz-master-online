@@ -232,3 +232,21 @@
 }
 
 /* Add more code themes as needed */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+th,
+td {
+  padding: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+th {
+  background-color: var(--color-theme);
+  font-weight: bold;
+}
