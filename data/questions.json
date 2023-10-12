@@ -258,7 +258,7 @@
         "Error",
         "Depends on machine"
       ],
-      "correctOption": "False",
+      "correctOption": 1,
       "points": 10,
       "code": "print(0.2 + 0.4 == 0.6)"
     },
@@ -270,7 +270,7 @@
         "High-level language",
         "Case Insensitive"
       ],
-      "correctOption": "Case Insensitive",
+      "correctOption": 3,
       "points": 10,
       "code": null
     },
@@ -282,7 +282,7 @@
         "400 500",
         "None of Above"
       ],
-      "correctOption": "800 - 400",
+      "correctOption": 2,
       "points": 10,
       "code": "def f(x=400, y=500): return (x + y, x - y) x, y = f(y=600, x=200) print(x, y)"
     },
@@ -294,7 +294,7 @@
         "[4, 2, 3]",
         "[1, 1, 3]"
       ],
-      "correctOption": "[4, 2, 3]",
+      "correctOption": 1,
       "points": 10,
       "code": "x = [1, 2, 3] y = x x[0] = 4 print(y)"
     },
@@ -306,7 +306,7 @@
         "List",
         "Set"
       ],
-      "correctOption": "List",
+      "correctOption": 2,
       "points": 10,
       "code": null
     },
@@ -318,7 +318,7 @@
         "A reference to the parent class",
         "A built-in Python function"
       ],
-      "correctOption": "The current instance of the class",
+      "correctOption": 0,
       "points": 10,
       "code": null
     },
@@ -330,7 +330,7 @@
         "It ensures that the code block is executed only when the script is run directly",
         "It checks if the program is running in a virtual environment"
       ],
-      "correctOption": "It ensures that the code block is executed only when the script is run directly",
+      "correctOption": 2,
       "points": 10,
       "code": null
     },
@@ -342,7 +342,7 @@
         "ythoP",
         "n"
       ],
-      "correctOption": "nohtyP",
+      "correctOption": 1,
       "points": 10,
       "code": "print('Python'[::-1])"
     },
@@ -354,7 +354,7 @@
         "regexp",
         "regexpy"
       ],
-      "correctOption": "re",
+      "correctOption": 0,
       "points": 10,
       "code": null
     },
@@ -366,7 +366,7 @@
         "They are used interchangeably",
         "There is no difference"
       ],
-      "correctOption": "'==' compares object values, 'is' compares object identity",
+      "correctOption": 0,
       "points": 10,
       "code": null
     },
@@ -378,7 +378,7 @@
         "@classmethod",
         "@property"
       ],
-      "correctOption": "@property",
+      "correctOption": 3,
       "points": 10,
       "code": null
     },
@@ -390,7 +390,7 @@
         "open('filename', 'r')",
         "file('filename', 'rb')"
       ],
-      "correctOption": "open('filename', 'rb')",
+      "correctOption": 1,
       "points": 10,
       "code": null
     },
@@ -402,7 +402,7 @@
         "2.0",
         "2.2"
       ],
-      "correctOption": "2.5",
+      "correctOption": 0,
       "points": 10,
       "code": "print(5 / 2)"
     },
@@ -414,7 +414,7 @@
         "Using triple double quotes (\"\")",
         "Using // for each line"
       ],
-      "correctOption": "Using // for each line",
+      "correctOption":3,
       "points": 10,
       "code": null
     },
@@ -426,7 +426,7 @@
         "[1, 2, 3]",
         "[4, 2, 3]"
       ],
-      "correctOption": "[1, 2, 3]",
+      "correctOption": 0,
       "points": 10,
       "code": "x = [1, 2, 3] y = x[:] x[0] = 4 print(y)"
     },
@@ -438,7 +438,7 @@
         "It is a placeholder for future code",
         "It does nothing"
       ],
-      "correctOption": "It does nothing",
+      "correctOption": 3,
       "points": 10,
       "code": null
     },
@@ -450,7 +450,7 @@
         "Hello, 'world!'",
         "Error"
       ],
-      "correctOption": "Hello, world!",
+      "correctOption": 1,
       "points": 10,
       "code": " print('Hello, ' + 'world!')"
     },
@@ -462,7 +462,7 @@
         "raise",
         "finally"
       ],
-      "correctOption": "raise",
+      "correctOption": 2,
       "points": 10,
       "code": null
     },
@@ -474,7 +474,7 @@
         "[4, 2, 3]",
         "[1, 2, 3]"
       ],
-      "correctOption": "[4, 5, 3]",
+      "correctOption": 0,
       "points": 10,
       "code": " x = [1, 2, 3] y = x x[0] = 4 y[1] = 5 print(x)"
     },
@@ -486,7 +486,7 @@
         "x = 5",
         "x := 5"
       ],
-      "correctOption": "x = 5",
+      "correctOption": 2,
       "points": 10,
       "code": null
     },
@@ -498,7 +498,7 @@
         "Greater than 10",
         "No output"
       ],
-      "correctOption": "Less than 10",
+      "correctOption": 0,
       "points": 10,
       "code": "a = 5 if a < 10: print('Less than 10') elif a == 10: print('Equal to 10') else: print('Greater than 10')"
     },
@@ -510,7 +510,7 @@
         "def",
         "define"
       ],
-      "correctOption": "def",
+      "correctOption": 2,
       "points": 10,
       "code": null
     },
@@ -522,7 +522,7 @@
         "new line and hi",
         "Error"
       ],
-      "correctOption": "print(r'\\nhi')",
+      "correctOption":0,
       "points": 10,
       "code": "print(r'\\nhi')"
     },
@@ -534,7 +534,7 @@
         "32 32",
         "None of the Above"
       ],
-      "correctOption": "23 32",
+      "correctOption": 2,
       "points": 10,
       "code": "a = 2 b = 3 print(a, b) a, b = b, a print(a, b)"
     },
@@ -546,7 +546,7 @@
         "list",
         "array"
       ],
-      "correctOption": "array",
+      "correctOption": 3,
       "points": 10,
       "code": null
     }

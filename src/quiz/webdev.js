@@ -100,7 +100,7 @@ function reducer(state, action) {
   }
 }
 
-export default function WebDev() {
+export default function WebDev({ cUser, quizStatus }) {
   const [
     { index, questions, status, answer, points, secondsRemaining, numbersQs },
     dispatch,
@@ -183,6 +183,8 @@ export default function WebDev() {
             points={points}
             maxPossiblePoints={maxPossiblePoints}
             dispatch={dispatch}
+            quizStatus={quizStatus}
+            cUser={cUser}
           />
         )}
       </main>

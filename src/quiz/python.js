@@ -100,7 +100,7 @@ function reducer(state, action) {
   }
 }
 
-export default function Python() {
+export default function Python({ quizStatus, cUser }) {
   const [
     { index, questions, status, answer, points, secondsRemaining, numbersQs },
     dispatch,
@@ -167,7 +167,7 @@ export default function Python() {
               dispatch={dispatch}
               answer={answer}
             />
-  
+
             <SideView
               numQuestions={numbersQs}
               dispatch={dispatch}
@@ -184,6 +184,8 @@ export default function Python() {
             points={points}
             maxPossiblePoints={maxPossiblePoints}
             dispatch={dispatch}
+            quizStatus={quizStatus}
+            cUser={cUser}
           />
         )}
       </main>

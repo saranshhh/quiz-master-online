@@ -92,8 +92,8 @@ export default function FinishedScreen({
             </tr>
           ))}
           <tr>
-            <td>{cUser}</td>
-            <td>{percentage}</td>
+            <td>{cUser} (you)</td>
+            <td>{Math.round(percentage)}</td>
             <td>{points}</td>
             <td>{maxPossiblePoints}</td>
           </tr>

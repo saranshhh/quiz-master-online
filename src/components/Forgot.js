@@ -20,7 +20,7 @@ function Forgot() {
       setMessage("");
       setLoading(true);
       await reset(emailref.current.value);
-      setMessage("Check your innbox for further instructions");
+      setMessage("Check your inbox for further instructions");
     } catch {
       setError("Failed to reset password.");
     }
