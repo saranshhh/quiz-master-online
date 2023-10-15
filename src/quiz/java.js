@@ -17,8 +17,10 @@ const initialState = {
   index: 0,
   answer: null,
   points: 0,
+  wrong: 0,
   secondsRemaining: 300,
   numbersQs: 10,
+  negative: false,
 };
 
 const SECS_PER_QUESTION = 30;
@@ -35,9 +37,12 @@ function shuffleArray(array) {
 
 function reducer(state, action) {
   switch (action.type) {
+    case "toggleNegativeMarking":
+      return { ...state, negative: action.payload };
     case "resetOption":
       return {
         ...state,
+        answer: null,
         questions: state.questions.map((q, i) => {
           return i === state.index
             ? { ...q, attempted: false, attemptedOption: null }
@@ -62,15 +67,28 @@ function reducer(state, action) {
         status: "active",
         secondsRemaining: Number(state.numbersQs) * SECS_PER_QUESTION,
       };
+    case "result":
+      let correctAnswers = 0;
+      let wrongAnswers = 0;
+      state.questions.forEach((question) => {
+        if (question.correctOption === question.attemptedOption) {
+          correctAnswers++;
+        } else if (question.attemptedOption !== null) {
+          wrongAnswers++;
+        }
+      });
+      if (state.negative === true) {
+        correctAnswers *= 3;
+        correctAnswers = correctAnswers - wrongAnswers;
+      }
+      return { ...state, wrong: wrongAnswers, points: correctAnswers };
+
     case "newanswer":
-      const question = state.questions[state.index];
+      //const question = state.questions[state.index];
       return {
         ...state,
         answer: action.payload,
-        points:
-          action.payload === question.correctOption
-            ? state.points + question.points
-            : state.points,
+
         questions: state.questions.map((q, i) => {
           return i === state.index
             ? { ...q, attempted: true, attemptedOption: action.payload }
@@ -114,7 +132,17 @@ function reducer(state, action) {
 
 export default function Java({ cUser, quizStatus }) {
   const [
-    { index, questions, status, answer, points, secondsRemaining, numbersQs },
+    {
+      index,
+      questions,
+      status,
+      answer,
+      points,
+      secondsRemaining,
+      numbersQs,
+      wrong,
+      negative,
+    },
     dispatch,
   ] = useReducer(reducer, initialState);
 
@@ -147,6 +175,7 @@ export default function Java({ cUser, quizStatus }) {
               dispatch={dispatch}
               secondsRemaining={secondsRemaining}
               cUser={cUser}
+              negative={negative}
             />
           </>
         )}
@@ -195,6 +224,8 @@ export default function Java({ cUser, quizStatus }) {
         {status === "finished" && (
           <FinishedScreen
             points={points}
+            wrong={wrong}
+            negative={negative}
             maxPossiblePoints={maxPossiblePoints}
             dispatch={dispatch}
             quizStatus={quizStatus}
@@ -202,7 +233,13 @@ export default function Java({ cUser, quizStatus }) {
           />
         )}
         {status === "result" && (
-          <>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              paddingBottom: "1rem",
+            }}
+          >
             <PrevButton dispatch={dispatch} answer={answer} index={index} />
             <NextButton
               dispatch={dispatch}
@@ -215,7 +252,7 @@ export default function Java({ cUser, quizStatus }) {
               dispatch={dispatch}
               answer={answer}
             />
-          </>
+          </div>
         )}
       </main>
     </div>

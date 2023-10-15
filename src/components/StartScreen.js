@@ -6,6 +6,7 @@ export default function StartScreen({
   dispatch,
   secondsRemaining,
   cUser,
+  negative,
 }) {
   const mins = Math.floor(secondsRemaining / 60);
   return (
@@ -39,6 +40,22 @@ export default function StartScreen({
           <option value="35">35</option>
           <option value="50">50</option>
         </select>
+
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              checked={negative}
+              onChange={() =>
+                dispatch({
+                  type: "toggleNegativeMarking",
+                  payload: !negative,
+                })
+              }
+            />
+            Keep negative marking
+          </label>
+        </div>
       </div>
     </div>
   );

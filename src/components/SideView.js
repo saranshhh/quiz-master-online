@@ -7,7 +7,7 @@ export default function SideView({
   question,
   questions,
 }) {
-  const buttons = Array.from({ length: numQuestions }, (_, i) => i);
+  //const buttons = Array.from({ length: numQuestions }, (_, i) => i);
   const newQuestions = [];
   for (let i = 0; i < numQuestions; i++) {
     newQuestions.push({

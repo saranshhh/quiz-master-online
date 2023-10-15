@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { db } from "../firebase";
-import { getDocs, collection, addDoc } from "firebase/firestore";
-import { async } from "regenerator-runtime";
+import { getDocs, collection } from "firebase/firestore";
+//import { async } from "regenerator-runtime";addDoc
 
 export default function FinishedScreen({
   points,
+  wrong,
+  negative,
   maxPossiblePoints,
   dispatch,
   quizStatus,
@@ -63,6 +65,7 @@ export default function FinishedScreen({
         {emoji}You scored{" "}
         <strong>
           {points} out of {maxPossiblePoints} ({Math.round(percentage)}%)
+          {negative ? <span> with {wrong} wrong answers</span> : null}
         </strong>
       </p>
       <button
