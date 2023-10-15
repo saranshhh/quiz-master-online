@@ -11,7 +11,7 @@ export default function StartScreen({
   return (
     <div style={{ textAlign: "center" }}>
       <h1>
-        Welcome {cUser},to the quiz on {name}
+        Welcome {cUser}, to the quiz on {name}
       </h1>
       <br></br>
       <h5>
@@ -27,6 +27,7 @@ export default function StartScreen({
         >
           Start
         </button>
+        <p>Select the number of questions:</p>
         <select
           className="btn buttonh"
           onChange={(e) =>

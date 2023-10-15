@@ -1,44 +1,40 @@
 import React from "react";
 
 export default function Question({ question, dispatch, answer }) {
-  const hasAnswered = answer !== null;
-  if (question.attempted === true) {
-    return (
-      <div>
-        <h4>{question.question}</h4>
-        {question.code !== null && (
-          <div class="quiz-question">
-            <p>Here is a code snippet:</p>
-            <pre class="code-theme-1">
-              <code>{question.code}</code>
-            </pre>
-          </div>
-        )}
+  // if (question.attempted === true) {
+  //   return (
+  //     <div>
+  //       <h4>{question.question}</h4>
+  //       {question.code !== null && (
+  //         <div class="quiz-question">
+  //           <p>Here is a code snippet:</p>
+  //           <pre class="code-theme-1">
+  //             <code>{question.code}</code>
+  //           </pre>
+  //         </div>
+  //       )}
 
-        <div>
-          {question.options.map((option, index) => {
-            return (
-              <button
-                className={`btn btn-option ${
-                  answer === index ? "answer" : ""
-                } ${
-                  question.correctOption === index
-                    ? "correct"
-                    : question.attemptedOption === index
-                    ? "wrong"
-                    : ""
-                }`}
-                key={option}
-                disabled
-              >
-                {option}
-              </button>
-            );
-          })}
-        </div>
-      </div>
-    );
-  }
+  //       <div>
+  //         {question.options.map((option, index) => {
+  //           return (
+  //             <button
+  //               className={`btn btn-option ${
+  //                 answer === index
+  //                   ? "selected"
+  //                   : question.attemptedOption === index
+  //                   ? "selected"
+  //                   : ""
+  //               } `}
+  //               key={option}
+  //             >
+  //               {option}
+  //             </button>
+  //           );
+  //         })}
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div>
@@ -55,15 +51,13 @@ export default function Question({ question, dispatch, answer }) {
       <div>
         {question.options.map((option, index) => (
           <button
-            className={`btn btn-option ${answer === index ? "answer" : ""} ${
-              hasAnswered
-                ? question.correctOption === index
-                  ? "correct correct-animate"
-                  : "wrong"
+            className={`btn btn-option  ${
+              question.attempted === true && question.attemptedOption === index
+                ? "selected"
                 : ""
             }`}
             key={option}
-            disabled={hasAnswered}
+            //disabled={hasAnswered}
             onClick={() => {
               dispatch({ type: "newanswer", payload: index });
             }}
@@ -72,6 +66,14 @@ export default function Question({ question, dispatch, answer }) {
           </button>
         ))}
       </div>
+      <button
+        className="btn"
+        onClick={() => {
+          dispatch({ type: "resetOption" });
+        }}
+      >
+        Reset
+      </button>
     </div>
   );
 }

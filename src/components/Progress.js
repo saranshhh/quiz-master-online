@@ -19,9 +19,7 @@ export default function Progress({
         </p>
         <p>
           {" "}
-          <strong>
-            {points} / {maxPossiblePoints}
-          </strong>
+          <strong>Max Score: {maxPossiblePoints}</strong>
         </p>
       </div>
     </header>

@@ -250,3 +250,13 @@ th {
   background-color: var(--color-theme);
   font-weight: bold;
 }
+
+.selected {
+  background-color: #cf97c3;
+  color: #000;
+}
+
+.not-selected {
+
+  background-color: var(--color-accent);
+}

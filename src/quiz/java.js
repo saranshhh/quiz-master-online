@@ -9,6 +9,7 @@ import Progress from "../components/Progress";
 import Timer from "../components/Timer";
 import FinishedScreen from "../components/FinishedScreen";
 import SideView from "../components/SideView";
+import ShowAttempted from "../components/ShowAttempted";
 
 const initialState = {
   questions: [],
@@ -34,6 +35,17 @@ function shuffleArray(array) {
 
 function reducer(state, action) {
   switch (action.type) {
+    case "resetOption":
+      return {
+        ...state,
+        questions: state.questions.map((q, i) => {
+          return i === state.index
+            ? { ...q, attempted: false, attemptedOption: null }
+            : q;
+        }),
+      };
+    case "questionDisplay":
+      return { ...state, status: "result", index: 0 };
     case "dataRecieved":
       const questions = action.payload.map((question) => ({
         ...question,
@@ -173,6 +185,7 @@ export default function Java({ cUser, quizStatus }) {
               dispatch={dispatch}
               index={index}
               question={questions[index]}
+              questions={questions}
             />
             <footer
               style={{ display: "flex", justifyContent: "space-between" }}
@@ -187,6 +200,22 @@ export default function Java({ cUser, quizStatus }) {
             quizStatus={quizStatus}
             cUser={cUser}
           />
+        )}
+        {status === "result" && (
+          <>
+            <PrevButton dispatch={dispatch} answer={answer} index={index} />
+            <NextButton
+              dispatch={dispatch}
+              answer={answer}
+              index={index}
+              numQuestions={numbersQs}
+            />
+            <ShowAttempted
+              question={questions[index]}
+              dispatch={dispatch}
+              answer={answer}
+            />
+          </>
         )}
       </main>
     </div>

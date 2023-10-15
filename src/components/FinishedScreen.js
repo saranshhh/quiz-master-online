@@ -71,6 +71,12 @@ export default function FinishedScreen({
       >
         Restart
       </button>
+      <button
+        className="btn btn-ui"
+        onClick={() => dispatch({ type: "questionDisplay" })}
+      >
+        Show Attempted Questions.
+      </button>
       <div>Leaderboard</div>
       {/* <button className="btn btn-ui">Show Leaderboard</button> */}
       <table>

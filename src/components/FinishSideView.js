@@ -1,23 +1,12 @@
 import React, { useState } from "react";
 
-export default function SideView({
+export default function FinishSideView({
   numQuestions,
   dispatch,
   index,
   question,
-  questions,
 }) {
   const buttons = Array.from({ length: numQuestions }, (_, i) => i);
-  const newQuestions = [];
-  for (let i = 0; i < numQuestions; i++) {
-    newQuestions.push({
-      value: i,
-      attempted: false,
-      attemptedOption: null,
-    });
-  }
-  console.log(newQuestions);
-
   const [hideButtons, setHideButtons] = useState(false);
 
   const toggleHideButtons = () => {
@@ -29,22 +18,24 @@ export default function SideView({
       style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
     >
       {!hideButtons &&
-        newQuestions.map((i) => (
+        buttons.map((i) => (
           <div key={i} style={{ margin: "0.5rem", flexBasis: "20%" }}>
             <button
-              className={`btn ${i["value"] === index ? "current-q" : ""} ${
-                i["value"] === index &&
-                questions[index].attemptedOption !== null
+              className={`btn ${i === index ? "current-q" : ""} ${
+                i === index &&
+                question.attemptedOption === question.correctOption
                   ? "correct-q"
+                  : i === index &&
+                    question.attemptedOption !== null &&
+                    question.attemptedOption !== question.correctOption
+                  ? "incorrect-q"
                   : ""
               }`}
-              key={`${question.id}-${index}`}
               onClick={() => {
-                dispatch({ type: "gotoQuestion", payload: i["value"] });
-                newQuestions[i["value"] - 1].attempted = true;
+                dispatch({ type: "gotoQuestion", payload: i });
               }}
             >
-              {i["value"] + 1}
+              {i + 1}
             </button>
           </div>
         ))}
