@@ -147,10 +147,14 @@ export default function Java({ cUser, quizStatus }) {
   ] = useReducer(reducer, initialState);
 
   //const numberOfQuestions = questions.length;
-  const maxPossiblePoints = questions.reduce(
-    (prev, curr) => prev + curr.points,
-    0
-  );
+  // const maxPossiblePoints = questions.reduce(
+  //   (prev, curr) => prev + curr.points,
+  //   0
+  // );
+  let maxPossiblePoints = numbersQs;
+  if (negative === true) {
+    maxPossiblePoints *= 3;
+  }
 
   useEffect(function () {
     //
@@ -233,26 +237,29 @@ export default function Java({ cUser, quizStatus }) {
           />
         )}
         {status === "result" && (
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              paddingBottom: "1rem",
-            }}
-          >
-            <PrevButton dispatch={dispatch} answer={answer} index={index} />
-            <NextButton
-              dispatch={dispatch}
-              answer={answer}
-              index={index}
-              numQuestions={numbersQs}
-            />
+          <>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                paddingBottom: "1rem",
+              }}
+            >
+              <PrevButton dispatch={dispatch} answer={answer} index={index} />
+              <NextButton
+                dispatch={dispatch}
+                answer={answer}
+                index={index}
+                numQuestions={numbersQs}
+              />
+            </div>
             <ShowAttempted
               question={questions[index]}
               dispatch={dispatch}
               answer={answer}
+              index={index}
             />
-          </div>
+          </>
         )}
       </main>
     </div>

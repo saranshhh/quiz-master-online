@@ -1,9 +1,11 @@
 import React from "react";
 
-export default function ShowAttempted({ question, dispatch, answer }) {
+export default function ShowAttempted({ question, answer, index }) {
   return (
     <div>
-      <h4>{question.question}</h4>
+      <h4>
+        Q{index + 1}. {question.question}
+      </h4>
       {question.code !== null && (
         <div class="quiz-question">
           <p>Here is a code snippet:</p>
