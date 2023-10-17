@@ -28,23 +28,25 @@ export default function SideView({
 
   function addCorrectClass(id) {
     newQuestions.forEach((question) => {
-      console.log(question, question["attempted"], question["value"], id);
+      console.log(question, question["correct"], question["value"], id);
       if (id === question["value"] && question["correct"] === true) {
-        // const button = document.querySelector(`#button-${id}`);
-        // button.classList.add("correct-q");
+        let button = document.querySelector(`#button-${id}`);
+        console.log(button);
+        if (button) button.classList.add("correct-q");
+
         // console.log(button, id, question["value"]);
 
-        console.log("correct", id, question["value"]);
+        console.log(id, question["value"]);
       } else {
-        // const button = document.querySelector(`#button-${id}`);
+        // const button = document.querySelector(`#button`);
         // button.classList.add("incorrect-q");
       }
     });
   }
 
-  buttons.forEach((i) => {
-    addCorrectClass(i);
-  });
+  // buttons.forEach((i) => {
+  //   addCorrectClass(i);
+  // });
 
   return (
     <div
@@ -59,7 +61,9 @@ export default function SideView({
             </p>
 
             <button
-              className={`btn ${i["value"] === index ? "current-q" : ""}`}
+              className={`btn ${
+                i["value"] === index ? "final-current-q" : ""
+              } ${i["correct"] === true ? "correct-q" : "incorrect-q"}`}
               // i["value"] === index &&
               // questions[index].attemptedOption !== null
               //   ? "correct-q"
@@ -78,6 +82,9 @@ export default function SideView({
                 // //newQuestions[i["value"]]["attempted"] = true;
                 // console.log(newQuestions[i["value"] - 1]?.attempted);
                 addCorrectClass(i["value"]);
+                // buttons.forEach((i) => {
+                //   addCorrectClass(i);
+                // });
               }}
             >
               {i["value"] + 1}
