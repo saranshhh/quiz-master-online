@@ -10,6 +10,7 @@ import Timer from "../components/Timer";
 import FinishedScreen from "../components/FinishedScreen";
 import SideView from "../components/SideView";
 import ShowAttempted from "../components/ShowAttempted";
+import FinishSideView from "../components/FinishSideView";
 
 const initialState = {
   questions: [],
@@ -258,6 +259,13 @@ export default function Java({ cUser, quizStatus }) {
               dispatch={dispatch}
               answer={answer}
               index={index}
+            />
+            <FinishSideView
+              numQuestions={numbersQs}
+              dispatch={dispatch}
+              index={index}
+              question={questions[index]}
+              questions={questions}
             />
           </>
         )}
