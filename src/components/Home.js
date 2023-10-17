@@ -23,6 +23,8 @@ function reducer(state, action) {
       return { ...state, status: "python" };
     case "setJava":
       return { ...state, status: "java" };
+    case "goBack":
+      return { ...state, status: "welcome" };
     default:
       return { ...state, error: "" };
   }
@@ -50,9 +52,15 @@ export default function Home() {
   }
   return (
     <>
-      {status === "webdev" && <WebDev cUser={currUser} quizStatus={status} />}
-      {status === "java" && <Java cUser={currUser} quizStatus={status} />}
-      {status === "python" && <Python cUser={currUser} quizStatus={status} />}
+      {status === "webdev" && (
+        <WebDev dis={dispatch} cUser={currUser} quizStatus={status} />
+      )}
+      {status === "java" && (
+        <Java dis={dispatch} cUser={currUser} quizStatus={status} />
+      )}
+      {status === "python" && (
+        <Python dis={dispatch} cUser={currUser} quizStatus={status} />
+      )}
       {status === "welcome" && (
         <>
           {" "}

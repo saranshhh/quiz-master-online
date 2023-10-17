@@ -11,6 +11,7 @@ import FinishedScreen from "../components/FinishedScreen";
 import SideView from "../components/SideView";
 import ShowAttempted from "../components/ShowAttempted";
 import FinishSideView from "../components/FinishSideView";
+import BackButton from "../components/BackButton";
 
 const initialState = {
   questions: [],
@@ -126,12 +127,13 @@ function reducer(state, action) {
       };
     case "gotoQuestion":
       return { ...state, index: action.payload, answer: null };
+    
     default:
       throw new Error("Unrecognized action");
   }
 }
 
-export default function Java({ cUser, quizStatus }) {
+export default function Java({ dis, cUser, quizStatus }) {
   const [
     {
       index,
@@ -269,6 +271,7 @@ export default function Java({ cUser, quizStatus }) {
             />
           </>
         )}
+        <BackButton dispatch={dis} />
       </main>
     </div>
   );
