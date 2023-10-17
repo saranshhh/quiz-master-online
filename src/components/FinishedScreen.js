@@ -24,22 +24,22 @@ export default function FinishedScreen({
   const [list, setList] = useState([]);
   const quizRef = collection(db, value);
 
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const data = await getDocs(quizRef);
-        const filteredData = data.docs.map((doc) => ({
-          ...doc.data(),
-          id: doc.id,
-        }));
-        setList(filteredData);
-        console.log(filteredData);
-      } catch (err) {
-        alert(err);
-      }
-    };
-    getData();
-  }, [quizRef]);
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     try {
+  //       const data = await getDocs(quizRef);
+  //       const filteredData = data.docs.map((doc) => ({
+  //         ...doc.data(),
+  //         id: doc.id,
+  //       }));
+  //       setList(filteredData);
+  //       console.log(filteredData);
+  //     } catch (err) {
+  //       alert(err);
+  //     }
+  //   };
+  //   getData();
+  // }, [quizRef]);
 
   console.log(list);
   console.log({ email: cUser, percentage: percentage, score: points });

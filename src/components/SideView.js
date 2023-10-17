@@ -7,22 +7,45 @@ export default function SideView({
   question,
   questions,
 }) {
-  //const buttons = Array.from({ length: numQuestions }, (_, i) => i);
-  const newQuestions = [];
+  const buttons = Array.from({ length: numQuestions }, (_, i) => i);
+  //console.log(questions);
+  let newQuestions = [];
   for (let i = 0; i < numQuestions; i++) {
+    console.log(questions[i].attempted);
     newQuestions.push({
       value: i,
-      attempted: false,
-      attemptedOption: null,
+      attempted: questions[i].attempted,
+      attemptedOption: question.attemptedOption,
     });
   }
-  console.log(newQuestions);
+  //console.log(newQuestions);
 
   const [hideButtons, setHideButtons] = useState(false);
+  //const [qq, setQq] = useState(newQuestions);
 
   const toggleHideButtons = () => {
     setHideButtons(!hideButtons);
   };
+
+  function addCorrectClass(id) {
+    newQuestions.forEach((question) => {
+      //console.log(question, question["attempted"], question["value"], id);
+      if (id === question["value"] && question["attempted"] === true) {
+        const button = document.querySelector(`#button-${id}`);
+        button.classList.add("correct-q");
+        console.log(button, id, question["value"]);
+      }
+    });
+  }
+  function removeCorrectClass(id) {
+    const button = document.querySelector(`#button-${id}`);
+    if (button) {
+      button.classList.remove("correct-q");
+    }
+  }
+  buttons.forEach((i) => {
+    addCorrectClass(i);
+  });
 
   return (
     <div
@@ -30,18 +53,28 @@ export default function SideView({
     >
       {!hideButtons &&
         newQuestions.map((i) => (
-          <div key={i} style={{ margin: "0.5rem", flexBasis: "20%" }}>
+          <div style={{ margin: "0.5rem", flexBasis: "20%" }}>
+            <p>
+              {i["value"]},{i["attempted"] === false ? "false" : "true"}
+            </p>
+
             <button
-              className={`btn ${i["value"] === index ? "current-q" : ""} ${
-                i["value"] === index &&
-                questions[index].attemptedOption !== null
-                  ? "correct-q"
-                  : ""
-              }`}
-              key={`${question.id}-${index}`}
+              className={`btn ${i["value"] === index ? "current-q" : ""} `}
+              // i["value"] === index &&
+              // questions[index].attemptedOption !== null
+              //   ? "correct-q"
+              //   : ""
+
+              id={`button-${i["value"]}`}
               onClick={() => {
                 dispatch({ type: "gotoQuestion", payload: i["value"] });
-                newQuestions[i["value"] - 1].attempted = true;
+                // console.log(i["value"]);
+                // //newQuestions[i["value"]]["attempted"] = true;
+                // console.log(newQuestions[i["value"] - 1]?.attempted);
+                addCorrectClass(i["value"]);
+                if (i["attempted"] === false) {
+                  removeCorrectClass(i["value"]);
+                }
               }}
             >
               {i["value"] + 1}
