@@ -54,9 +54,7 @@ export default function SideView({
       {!hideButtons &&
         newQuestions.map((i) => (
           <div style={{ margin: "0.5rem", flexBasis: "20%" }}>
-            <p>
-              {i["value"]},{i["attempted"] === false ? "false" : "true"}
-            </p>
+            
 
             <button
               className={`btn ${i["value"] === index ? "current-q" : ""}${

@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+//!import React, { useEffect, useState } from "react";
 import { db } from "../firebase";
-import { getDocs, collection } from "firebase/firestore";
+import { collection } from "firebase/firestore";
+//!import { getDocs, collection } from "firebase/firestore";
 //import { async } from "regenerator-runtime";addDoc
 
 export default function FinishedScreen({
@@ -20,9 +22,9 @@ export default function FinishedScreen({
   if (percentage >= 0 && percentage < 50) emoji = "🤨";
   if (percentage === 0) emoji = "🤦‍♂️";
 
-  const value = "board-" + quizStatus;
+  //!const value = "board-" + quizStatus;
   const [list, setList] = useState([]);
-  const quizRef = collection(db, value);
+  //!const quizRef = collection(db, value);
 
   // useEffect(() => {
   //   const getData = async () => {
@@ -41,8 +43,8 @@ export default function FinishedScreen({
   //   getData();
   // }, [quizRef]);
 
-  console.log(list);
-  console.log({ email: cUser, percentage: percentage, score: points });
+  // console.log(list);
+  // console.log({ email: cUser, percentage: percentage, score: points });
 
   // const addData = async () => {
   //   try {
@@ -63,9 +65,14 @@ export default function FinishedScreen({
       <p className="result">
         {emoji}You scored{" "}
         <strong>
-          {points} out of {maxPossiblePoints} ({Math.round(percentage)}%)<br></br>
-          {negative ? <span> with {wrong} wrong answers</span> : null}<br></br>
-          Score Overview: Correct Answers: {points / 3 + wrong}<br></br>
+          {points} out of {maxPossiblePoints} ({Math.round(percentage)}%)
+          <br></br>
+          {negative ? <span> with {wrong} wrong answers</span> : null}
+          <br></br>
+          Score Overview:
+          <br></br>
+          Correct Answers: {negative ? points / 3 + wrong : points}
+          <br></br>
           Wrong Answers: {wrong} <br></br>
           Score: {points} <br></br>
           Max Score: {maxPossiblePoints}

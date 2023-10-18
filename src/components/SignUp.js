@@ -28,7 +28,7 @@ function SignUp() {
         emailref.current.value,
         passwordref.current.value,
         usernameref.current.value
-      );
+      );  
       await signup(
         emailref.current.value,
         passwordref.current.value,

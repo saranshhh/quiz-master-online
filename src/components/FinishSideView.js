@@ -11,7 +11,7 @@ export default function SideView({
   //console.log(questions);
   let newQuestions = [];
   for (let i = 0; i < numQuestions; i++) {
-    console.log(questions[i].correctOption, questions[i].attemptedOption);
+    //console.log(questions[i].correctOption, questions[i].attemptedOption);
     newQuestions.push({
       value: i,
       correct: questions[i].correctOption === questions[i].attemptedOption,
@@ -55,11 +55,6 @@ export default function SideView({
       {!hideButtons &&
         newQuestions.map((i) => (
           <div style={{ margin: "0.5rem", flexBasis: "20%" }}>
-            <p>
-              {i["value"]},{i["attempted"] === false ? "false" : "true"},
-              {i["correct"] === false ? "false" : "true"}
-            </p>
-
             <button
               className={`btn ${
                 i["value"] === index ? "final-current-q" : ""

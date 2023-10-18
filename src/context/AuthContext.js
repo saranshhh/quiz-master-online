@@ -67,7 +67,7 @@ export function AuthProvider({ children }) {
       .then((userCredential) => {
         // Signed up
         const user = userCredential.user;
-        setCurrentUser(user);
+        //setCurrentUser(user);
 
         if (user) {
           updateProfile(user, {

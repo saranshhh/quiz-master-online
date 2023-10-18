@@ -34,9 +34,10 @@ export default function Home() {
   const [{ error, status }, dispatch] = useReducer(reducer, initialState);
 
   const { currentUser, logout } = useAuth();
-  let currUsername, currEmail;
+  let currUsername;
+  //let currEmail
   if (currentUser && currentUser.email) {
-    currEmail = currentUser.email;
+    //!currEmail = currentUser.email;
     currUsername = currentUser.displayName;
   }
 

@@ -1,0 +1,1248 @@
+{
+  "questions_web": [
+    {
+      "question": "Which is the most popular JavaScript framework?",
+      "options": [
+        "Angular",
+        "React",
+        "Svelte",
+        "Vue"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "Which company invented React?",
+      "options": [
+        "Google",
+        "Apple",
+        "Netflix",
+        "Facebook"
+      ],
+      "correctOption": 3,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What's the fundamental building block of React apps?",
+      "options": [
+        "Components",
+        "Blocks",
+        "Elements",
+        "Effects"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What's the name of the syntax we use to describe the UI in React components?",
+      "options": [
+        "FBJ",
+        "Babel",
+        "JSX",
+        "ES2015"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "How does data flow naturally in React apps?",
+      "options": [
+        "From parents to children",
+        "From children to parents",
+        "Both ways",
+        "The developers decides"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "How to pass data into a child component?",
+      "options": [
+        "State",
+        "Props",
+        "PropTypes",
+        "Parameters"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "When to use derived state?",
+      "options": [
+        "Whenever the state should not trigger a re-render",
+        "Whenever the state can be synchronized with an effect",
+        "Whenever the state should be accessible to all components",
+        "Whenever the state can be computed from another state variable"
+      ],
+      "correctOption": 3,
+      "points": 30,
+      "code": null
+    },
+    {
+      "question": "What triggers a UI re-render in React?",
+      "options": [
+        "Running an effect",
+        "Passing props",
+        "Updating state",
+        "Adding event listeners to DOM elements"
+      ],
+      "correctOption": 2,
+      "points": 20,
+      "code": null
+    },
+    {
+      "question": "When do we directly \"touch\" the DOM in React?",
+      "options": [
+        "When we need to listen to an event",
+        "When we need to change the UI",
+        "When we need to add styles",
+        "Almost never"
+      ],
+      "correctOption": 3,
+      "points": 20,
+      "code": null
+    },
+    {
+      "question": "In what situation do we use a callback to update state?",
+      "options": [
+        "When updating the state will be slow",
+        "When the updated state is very data-intensive",
+        "When the state update should happen faster",
+        "When the new state depends on the previous state"
+      ],
+      "correctOption": 3,
+      "points": 30,
+      "code": null
+    },
+    {
+      "question": "If we pass a function to useState, when will that function be called?",
+      "options": [
+        "On each re-render",
+        "Each time we update the state",
+        "Only on the initial render",
+        "The first time we update the state"
+      ],
+      "correctOption": 2,
+      "points": 30,
+      "code": null
+    },
+    {
+      "question": "Which hook to use for an API request on the component's initial render?",
+      "options": [
+        "useState",
+        "useEffect",
+        "useRef",
+        "useReducer"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "Which variables should go into the useEffect dependency array?",
+      "options": [
+        "Usually none",
+        "All our state variables",
+        "All state and props referenced in the effect",
+        "All variables needed for clean up"
+      ],
+      "correctOption": 2,
+      "points": 30,
+      "code": null
+    },
+    {
+      "question": "An effect will always run on the initial render.",
+      "options": [
+        "True",
+        "It depends on the dependency array",
+        "False",
+        "In depends on the code in the effect"
+      ],
+      "correctOption": 0,
+      "points": 30,
+      "code": null
+    },
+    {
+      "question": "When will an effect run if it doesn't have a dependency array?",
+      "options": [
+        "Only when the component mounts",
+        "Only when the component unmounts",
+        "The first time the component re-renders",
+        "Each time the component is re-rendered"
+      ],
+      "correctOption": 3,
+      "points": 20,
+      "code": null
+    },
+    {
+      "question": "What is the purpose of the map() function in JavaScript?",
+      "options": [
+        "To create a new array with the results of calling a provided function on every element in the array.",
+        "To remove elements from an array.",
+        "To add elements to the end of an array.",
+        "To sort the elements of an array."
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "Which of the following is not a valid primitive data type in JavaScript?",
+      "options": [
+        "Number",
+        "String",
+        "Object",
+        "Boolean"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What is the purpose of the localStorage object in web development?",
+      "options": [
+        "To store data on the server.",
+        "To store session-specific data.",
+        "To store data locally in the user's browser.",
+        "To store data in cookies."
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What does CSS stand for in web development?",
+      "options": [
+        "Cascading Style Sheet",
+        "Computer Style Sheet",
+        "Colorful Style Sheet",
+        "Creative Style Sheet"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "Which HTTP status code indicates a successful request in the HTTP protocol?",
+      "options": [
+        "200 OK",
+        "404 Not Found",
+        "500 Internal Server Error",
+        "302 Found"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What does the acronym API stand for in the context of web development?",
+      "options": [
+        "Application Programming Interface",
+        "Advanced Programming Interface",
+        "Application Protocol Interface",
+        "Advanced Protocol Interface"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "In the context of databases, what does SQL stand for?",
+      "options": [
+        "Structured Query Language",
+        "Simple Query Language",
+        "System Query Language",
+        "Standardized Query Language"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "Which programming language is commonly used for server-side web development?",
+      "options": [
+        "JavaScript",
+        "Python",
+        "HTML",
+        "CSS"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What is the primary function of a web server?",
+      "options": [
+        "To display web pages in a web browser.",
+        "To store and manage databases.",
+        "To process and respond to HTTP requests.",
+        "To create and design web pages."
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What is the purpose of the try...catch statement in JavaScript?",
+      "options": [
+        "To define a function.",
+        "To declare a variable.",
+        "To handle exceptions and errors.",
+        "To create a loop."
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "code": null
+    }
+  ],
+  "questions_python": [
+    {
+      "question": "What is the output of the below program in Python: ",
+      "options": [
+        "True",
+        "False",
+        "Error",
+        "Depends on machine"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "code": "print(0.2 + 0.4 == 0.6)"
+    },
+    {
+      "question": "Which is not a feature of Python language?",
+      "options": [
+        "Interpreted language",
+        "Portable",
+        "High-level language",
+        "Case Insensitive"
+      ],
+      "correctOption": 3,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What is the output of the following code? ",
+      "options": [
+        "900 - 100",
+        "800 - 400",
+        "400 500",
+        "None of Above"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "code": "def f(x=400, y=500): return (x + y, x - y) x, y = f(y=600, x=200) print(x, y)"
+    },
+    {
+      "question": "What will be the output of the code snippet below? ",
+      "options": [
+        "[1, 2, 3]",
+        "[4, 2, 3]",
+        "[4, 2, 3]",
+        "[1, 1, 3]"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "code": "x = [1, 2, 3] y = x x[0] = 4 print(y)"
+    },
+    {
+      "question": "Which of the following data types is mutable in Python?",
+      "options": [
+        "String",
+        "Tuple",
+        "List",
+        "Set"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What does the 'self' keyword represent in a Python class?",
+      "options": [
+        "The current instance of the class",
+        "A reserved keyword for conditional statements",
+        "A reference to the parent class",
+        "A built-in Python function"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What is the purpose of the 'if __name__ == '__main__': statement in Python?",
+      "options": [
+        "It defines the main function of the program",
+        "It specifies the name of the main module",
+        "It ensures that the code block is executed only when the script is run directly",
+        "It checks if the program is running in a virtual environment"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What is the output of the following code? ",
+      "options": [
+        "Python",
+        "nohtyP",
+        "ythoP",
+        "n"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "code": "print('Python'[::-1])"
+    },
+    {
+      "question": "Which module is used to work with regular expressions in Python?",
+      "options": [
+        "re",
+        "regex",
+        "regexp",
+        "regexpy"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What is the difference between '==' and 'is' in Python for comparing objects?",
+      "options": [
+        "'==' compares object values, 'is' compares object identity",
+        "'==' compares object identity, 'is' compares object values",
+        "They are used interchangeably",
+        "There is no difference"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "Which of the following is an example of a built-in decorator in Python?",
+      "options": [
+        "@staticmethod",
+        "@abstractmethod",
+        "@classmethod",
+        "@property"
+      ],
+      "correctOption": 3,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "How do you open a file in binary mode for reading in Python?",
+      "options": [
+        "file('filename', 'r')",
+        "open('filename', 'rb')",
+        "open('filename', 'r')",
+        "file('filename', 'rb')"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What will the following code output? ",
+      "options": [
+        "2.5",
+        "2",
+        "2.0",
+        "2.2"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "code": "print(5 / 2)"
+    },
+    {
+      "question": "Which of the following is not a valid way to comment out multiple lines in Python?",
+      "options": [
+        "Using # for each line",
+        "Using triple single quotes (''')",
+        "Using triple double quotes (\"\")",
+        "Using // for each line"
+      ],
+      "correctOption": 3,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What is the output of the following code? ",
+      "options": [
+        "[1, 2, 3]",
+        "[4, 2, 3]",
+        "[1, 2, 3]",
+        "[4, 2, 3]"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "code": "x = [1, 2, 3] y = x[:] x[0] = 4 print(y)"
+    },
+    {
+      "question": "What does the 'pass' statement do in Python?",
+      "options": [
+        "It terminates the program",
+        "It raises an exception",
+        "It is a placeholder for future code",
+        "It does nothing"
+      ],
+      "correctOption": 3,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What is the output of the following code?",
+      "options": [
+        "Hello, + world!",
+        "Hello, world!",
+        "Hello, 'world!'",
+        "Error"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "code": " print('Hello, ' + 'world!')"
+    },
+    {
+      "question": "Which of the following statements is used to raise exceptions in Python?",
+      "options": [
+        "try",
+        "except",
+        "raise",
+        "finally"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What is the output of the following code?",
+      "options": [
+        "[4, 5, 3]",
+        "[1, 5, 3]",
+        "[4, 2, 3]",
+        "[1, 2, 3]"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "code": " x = [1, 2, 3] y = x x[0] = 4 y[1] = 5 print(x)"
+    },
+    {
+      "question": "In Python, which of the following is a valid way to define a variable?",
+      "options": [
+        "var x = 5",
+        "x : 5",
+        "x = 5",
+        "x := 5"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What is the output of the following code? ",
+      "options": [
+        "Less than 10",
+        "Equal to 10",
+        "Greater than 10",
+        "No output"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "code": "a = 5 if a < 10: print('Less than 10') elif a == 10: print('Equal to 10') else: print('Greater than 10')"
+    },
+    {
+      "question": "Which of the following statements is used to define a function in Python?",
+      "options": [
+        "func",
+        "function",
+        "def",
+        "define"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What is the output of the following code? ",
+      "options": [
+        "print(r'\\nhi')",
+        "hi",
+        "new line and hi",
+        "Error"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "code": "print(r'\\nhi')"
+    },
+    {
+      "question": "What is the output of the following code? ",
+      "options": [
+        "23 23",
+        "23 32",
+        "32 32",
+        "None of the Above"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "code": "a = 2 b = 3 print(a, b) a, b = b, a print(a, b)"
+    },
+    {
+      "question": "Which of the following is not a built-in data type in Python?",
+      "options": [
+        "int",
+        "float",
+        "list",
+        "array"
+      ],
+      "correctOption": 3,
+      "points": 10,
+      "code": null
+    }
+  ],
+  "questions_java": [
+    {
+      "question": "Who invented Java Programming?",
+      "options": [
+        "Guido van Rossum",
+        "James Gosling",
+        "Dennis Ritchie",
+        "Bjarne Stroustrup"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "Which statement is true about Java?",
+      "options": [
+        "Java is a sequence-dependent programming language",
+        "Java is a code dependent programming language",
+        "Java is a platform-dependent programming language",
+        "Java is a platform-independent programming language"
+      ],
+      "correctOption": 3,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "Which component is used to compile, debug and execute the java programs?",
+      "options": [
+        "JRE",
+        "JIT",
+        "JDK",
+        "JVM"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "Which one of the following is not a Java feature?",
+      "options": [
+        "Object-oriented",
+        "Use of pointers",
+        "Portable",
+        "Dynamic and Extensible"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "Which of these cannot be used for a variable name in Java?",
+      "options": [
+        "identifier & keyword",
+        "identifier",
+        "keyword",
+        "none of the mentioned"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What is the extension of java code files?",
+      "options": [
+        ".js",
+        ".txt",
+        ".class",
+        ".java"
+      ],
+      "correctOption": 3,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What will be the output of the following Java code?",
+      "options": [
+        "32",
+        "33",
+        "24",
+        "25"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "code": "class output {\n    public static void main(String args[]) \n    {\n        double a, b, c;\n        a = 3.0/0;\n        b = 0/4.0;\n        c = 0/0.0;\n        System.out.println(a);\n        System.out.println(b);\n        System.out.println(c);\n    } \n}"
+    },
+    {
+      "question": "Which environment variable is used to set the java path?",
+      "options": [
+        "MAVEN_Path",
+        "JavaPATH",
+        "JAVA",
+        "JAVA_HOME"
+      ],
+      "correctOption": 3,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What will be the output of the following Java program?",
+      "options": [
+        "NaN",
+        "Infinity",
+        "0.0",
+        "all of the mentioned"
+      ],
+      "correctOption": 3,
+      "points": 10,
+      "code": "\nclass output {\n    public static void main(String args[]) \n    {\n        double a, b, c;\n        a = 3.0/0;\n        b = 0/4.0;\n        c = 0/0.0;\n        System.out.println(a);\n        System.out.println(b);\n        System.out.println(c);\n    } \n}"
+    },
+    {
+      "question": "Which of the following is not an OOPS concept in Java?",
+      "options": [
+        "Polymorphism",
+        "Inheritance",
+        "Compilation",
+        "Encapsulation"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What is not the use of 'this' keyword in Java?",
+      "options": [
+        "Referring to the instance variable when a local variable has the same name",
+        "Passing itself to the method of the same class",
+        "Passing itself to another method",
+        "Calling another constructor in constructor chaining"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What will be the output of the following Java program?",
+      "options": [
+        "Compilation error",
+        "Runtime error",
+        "5 6 5 6",
+        "5 6 5"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "code": "\nclass variable_scope \n{\n    public static void main(String args[]) \n    {\n        int x;\n        x = 5;\n        {\n            int y = 6;\n            System.out.print(x + \" \" + y);\n        }\n        System.out.println(x + \" \" + y);\n    } \n}"
+    },
+    {
+      "question": "What will be the error in the following Java code?",
+      "options": [
+        "b cannot contain value 50",
+        "b cannot contain value 100, limited by its range",
+        "No error in this code",
+        "* operator has converted b * 50 into int, which cannot be converted to byte without casting"
+      ],
+      "correctOption": 3,
+      "points": 10,
+      "code": "\nbyte b = 50;\nb = b * 50;"
+    },
+    {
+      "question": "Which of the following is a type of polymorphism in Java Programming?",
+      "options": [
+        "Multiple polymorphism",
+        "Compile time polymorphism",
+        "Multilevel polymorphism",
+        "Execution time polymorphism"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What will be the output of the following Java program?",
+      "options": [
+        "0 256",
+        "0 64",
+        "256 0",
+        "64 0"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "code": "\nclass leftshift_operator \n{\n    public static void main(String args[]) \n    {        \n         byte x = 64;\n         int i;\n         byte y; \n         i = x << 2;\n         y = (byte) (x << 2);\n         System.out.print(i + \" \" + y);\n    } \n}"
+    },
+    {
+      "question": "What will be the output of the following Java code?",
+      "options": [
+        "100",
+        "400",
+        "200",
+        "12"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "code": "\nclass box \n{\n    int width;\n    int height;\n    int length;\n} \nclass main\n{\n    public static void main(String args[]) \n    {        \n         box obj = new box();\n         obj.width = 10;\n         obj.height = 2;\n         obj.length = 10;\n         int y = obj.width * obj.height * obj.length; \n         System.out.print(y);\n    } \n}"
+    },
+    {
+      "question": "What is Truncation in Java?",
+      "options": [
+        "Floating-point value assigned to a Floating type",
+        "Floating-point value assigned to an integer type",
+        "Integer value assigned to floating type",
+        "Integer value assigned to floating type"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What will be the output of the following Java program?",
+      "options": [
+        "1 2 3 4 5",
+        "1 2 3 4",
+        "1 2",
+        "1 2 3"
+      ],
+      "correctOption": 3,
+      "points": 10,
+      "code": "\nclass Output \n{\n    public static void main(String args[]) \n    {\n        int arr[] = {1, 2, 3, 4, 5};\n        for ( int i = 0; i < arr.length - 2; ++i)\n            System.out.println(arr[i] + \" \");\n    } \n}"
+    },
+    {
+      "question": "What will be the output of the following Java code?",
+      "options": [
+        "The snippet compiles and runs but does not print anything",
+        "The snippet compiles, runs and prints 0",
+        "The snippet compiles, runs and prints 1",
+        "The snippet does not compile"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "code": "\nclass abc\n{\n    public static void main(String args[])\n    {\n        if(args.length>0)\n        System.out.println(args.length);\n    }\n}"
+    },
+    {
+      "question": "What is the extension of compiled java classes?",
+      "options": [
+        ".txt",
+        ".js",
+        ".class",
+        ".java"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "Which exception is thrown when java is out of memory?",
+      "options": [
+        "MemoryError",
+        "OutOfMemoryError",
+        "MemoryOutOfBoundsException",
+        "MemoryFullException"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What will be the output of the following Java code?",
+      "options": [
+        "9.0",
+        "8.0",
+        "4.0",
+        "2.0"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "code": "\nclass Output \n{\n    public static void main(String args[]) \n    {\n        double x = 2.0;  \n        double y = 3.0;\n        double z = Math.pow( x, y );\n        System.out.print(z);\n    }\n}"
+    },
+    {
+      "question": "Which of the following is a superclass of every class in Java?",
+      "options": [
+        "ArrayList",
+        "Abstract class",
+        "Object class",
+        "String"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What will be the output of the following Java code?",
+      "options": [
+        "0",
+        "true",
+        "1",
+        "false"
+      ],
+      "correctOption": 3,
+      "points": 10,
+      "code": "\nclass output \n{\n    public static void main(String args[])\n    { \n       String c = \"Hello i love java\";\n       boolean var;\n       var = c.startsWith(\"hello\");\n       System.out.println(var);\n    }\n}"
+    },
+    {
+      "question": "Which of these keywords is used to define interfaces in Java?",
+      "options": [
+        "intf",
+        "Intf",
+        "interface",
+        "Interface"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What will be the output of the following Java code?",
+      "options": [
+        "QuizziuQ",
+        "ziuQQuiz",
+        "Quiz",
+        "ziuQ"
+      ],
+      "correctOption": 3,
+      "points": 10,
+      "code": "\nclass output \n{\n    public static void main(String args[])\n    { \n       StringBuffer s1 = new StringBuffer(\"Quiz\");\n       StringBuffer s2 = s1.reverse();\n       System.out.println(s2);\n    }\n}"
+    },
+    {
+      "question": "What will be the output of the following Java code?",
+      "options": [
+        "257",
+        "256",
+        "1",
+        "0"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "code": "\nclass Output \n{\n     public static void main(String args[]) \n     {\n          Integer i = new Integer(257);  \n          byte x = i.byteValue();\n          System.out.print(x);\n     }\n}"
+    },
+    {
+      "question": "What will be the output of the following Java program?",
+      "options": [
+        "127",
+        "126",
+        "Runtime Error",
+        "Compilation Error"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "code": "\nclass Output \n{\n     public static void main(String args[]) \n     {\n          URL obj = new URL(\"https://www.sanfoundry.com/javamcq\");\n          URLConnection obj1 = obj.openConnection();\n          int len = obj1.getContentLength();\n          System.out.print(len);\n     }\n}"
+    },
+    {
+      "question": "Which of these keywords are used for the block to be examined for exceptions?",
+      "options": [
+        "check",
+        "throw",
+        "catch",
+        "try"
+      ],
+      "correctOption": 3,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What will be the output of the following Java program?",
+      "options": [
+        "truetrue",
+        "falsefalse",
+        "true",
+        "false"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "code": "\nclass newthread extends Thread\n{\n    Thread t;\n    newthread()\n    {\n        t1 = new Thread(this,\"Thread_1\");\n        t2 = new Thread(this,\"Thread_2\");\n        t1.start();\n        t2.start();\n    }\n    public void run()\n    {\n        t2.setPriority(Thread.MAX_PRIORITY);\n        System.out.print(t1.equals(t2));\n    }\n}\nclass multithreaded_programing\n{\n    public static void main(String args[])\n    {\n        new newthread();\n    }\n}"
+    },
+    {
+      "question": "Which one of the following is not an access modifier?",
+      "options": [
+        "Protected",
+        "Void",
+        "Public",
+        "Private"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What will be the output of the following Java program?",
+      "options": [
+        "4 6.4",
+        "6.4 6",
+        "6.4 6.4",
+        "6 6"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "code": "\nclass overload \n{\n    int x;\n    double y;\n    void add(int a , int b) \n    {\n        x = a + b;\n    }\n    void add(double c , double d)\n    {\n        y = c + d;\n    }\n    overload() \n    {\n        this.x = 0;\n        this.y = 0;\n    }\n}\nclass Overload_methods \n{\n    public static void main(String args[])\n    {\n        overload obj = new overload();   \n        int a = 2;\n        double b = 3.2;\n        obj.add(a, a);\n        obj.add(b, b);\n        System.out.println(obj.x + \" \" + obj.y);     \n    }\n}"
+    },
+    {
+      "question": "Which of the following is true about servlets?",
+      "options": [
+        "Servlets can use the full functionality of the Java class libraries",
+        "Servlets execute within the address space of web server, platform independent and uses the functionality of java class libraries",
+        "Servlets execute within the address space of web server",
+        "Servlets are platform-independent because they are written in java"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What will be the output of the following Java code?",
+      "options": [
+        "2 2",
+        "3 3",
+        "Runtime Error",
+        "Compilation Error"
+      ],
+      "correctOption": 3,
+      "points": 10,
+      "code": "\nfinal class A \n{\n    int i;\n}    \nclass B extends A \n{\n    int j;\n    System.out.println(j + \" \" + i);  \n}    \nclass inheritance \n{\n    public static void main(String args[])\n    {\n        B obj = new B();   \n        obj.display();     \n    }\n}"
+    },
+    {
+      "question": "What is the numerical range of a char data type in Java?",
+      "options": [
+        "0 to 256",
+        "-128 to 127",
+        "0 to 65535",
+        "0 to 32767"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "Which class provides system independent server side implementation?",
+      "options": [
+        "Server",
+        "ServerReader",
+        "Socket",
+        "ServerSocket"
+      ],
+      "correctOption": 3,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What will be the output of the following Java code?",
+      "options": [
+        "4 6.4",
+        "6.4 6",
+        "6.4 6.4",
+        "6 6"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "code": "\nclass overload \n{\n    int x;\n    double y;\n    void add(int a , int b) \n    {\n        x = a + b;\n    }\n    void add(double c , double d)\n    {\n        y = c + d;\n    }\n    overload() \n    {\n        this.x = 0;\n        this.y = 0;\n    }\n}\nclass Overload_methods \n{\n    public static void main(String args[])\n    {\n        overload obj = new overload();   \n        int a = 2;\n        double b = 3.2;\n        obj.add(a, a);\n        obj.add(b, b);\n        System.out.println(obj.x + \" \" + obj.y);     \n    }\n}"
+    },
+    {
+      "question": "Which of the following is true about servlets?",
+      "options": [
+        "Servlets can use the full functionality of the Java class libraries",
+        "Servlets execute within the address space of web server, platform independent and uses the functionality of java class libraries",
+        "Servlets execute within the address space of web server",
+        "Servlets are platform-independent because they are written in java"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What will be the output of the following Java code?",
+      "options": [
+        "2 2",
+        "3 3",
+        "Runtime Error",
+        "Compilation Error"
+      ],
+      "correctOption": 3,
+      "points": 10,
+      "code": "\nfinal class A \n{\n    int i;\n}    \nclass B extends A \n{\n    int j;\n    System.out.println(j + \" \" + i);  \n}    \nclass inheritance \n{\n    public static void main(String args[])\n    {\n        B obj = new B();   \n        obj.display();     \n    }\n}"
+    },
+    {
+      "question": "What is the numerical range of a char data type in Java?",
+      "options": [
+        "0 to 256",
+        "-128 to 127",
+        "0 to 65535",
+        "0 to 32767"
+      ],
+      "correctOption": 2,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "Which class provides system independent server side implementation?",
+      "options": [
+        "Server",
+        "ServerReader",
+        "Socket",
+        "ServerSocket"
+      ],
+      "correctOption": 3,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What will be the output of the following Java program?",
+      "options": [
+        "127",
+        "126",
+        "Runtime Error",
+        "Compilation Error"
+      ],
+      "correctOption": 0,
+      "points": 10,
+      "code": "\nclass Output \n{\n     public static void main(String args[]) \n     {\n          URL obj = new URL(\"https://www.sanfoundry.com/javamcq\");\n          URLConnection obj1 = obj.openConnection();\n          int len = obj1.getContentLength();\n          System.out.print(len);\n     }\n}"
+    },
+    {
+      "question": "Which of these keywords are used for the block to be examined for exceptions?",
+      "options": [
+        "check",
+        "throw",
+        "catch",
+        "try"
+      ],
+      "correctOption": 3,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What will be the output of the following Java program?",
+      "options": [
+        "truetrue",
+        "falsefalse",
+        "true",
+        "false"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "code": "\nclass newthread extends Thread\n{\n    Thread t;\n    newthread()\n    {\n        t1 = new Thread(this,\"Thread_1\");\n        t2 = new Thread(this,\"Thread_2\");\n        t1.start();\n        t2.start();\n    }\n    public void run()\n    {\n        t2.setPriority(Thread.MAX_PRIORITY);\n        System.out.print(t1.equals(t2));\n    }\n}\nclass multithreaded_programing\n{\n    public static void main(String args[])\n    {\n        new newthread();\n    }\n}"
+    },
+    {
+      "question": "Which one of the following is not an access modifier?",
+      "options": [
+        "Protected",
+        "Void",
+        "Public",
+        "Private"
+      ],
+      "correctOption": 1,
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What is the range of short data type in Java?",
+      "options": [
+        "a) -128 to 127",
+        "b) -32768 to 32767",
+        "c) -2147483648 to 2147483647",
+        "d) None of the mentioned"
+      ],
+      "correctOption": "b",
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What is the range of byte data type in Java?",
+      "options": [
+        "a) -128 to 127",
+        "b) -32768 to 32767",
+        "c) -2147483648 to 2147483647",
+        "d) None of the mentioned"
+      ],
+      "correctOption": "a",
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "Which of the following are legal lines of Java code?",
+      "options": [
+        "1. int w = (int)888.8;",
+        "2. byte x = (byte)100L;",
+        "3. long y = (byte)100;",
+        "4. byte z = (byte)100L;"
+      ],
+      "correctOption": "d",
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "An expression involving byte, int, and literal numbers is promoted to which of these?",
+      "options": [
+        "a) int",
+        "b) long",
+        "c) byte",
+        "d) float"
+      ],
+      "correctOption": "a",
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "Which of these literals can be contained in a float data type variable?",
+      "options": [
+        "a) -1.7e+308",
+        "b) -3.4e+038",
+        "c) +1.7e+308",
+        "d) -3.4e+050"
+      ],
+      "correctOption": "b",
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "Which data type value is returned by all transcendental math functions?",
+      "options": [
+        "a) int",
+        "b) float",
+        "c) double",
+        "d) long"
+      ],
+      "correctOption": "c",
+      "points": 10,
+      "code": null
+    },
+    {
+      "question": "What will be the output of the following ",
+      "options": [],
+      "correctOption": "c",
+      "points": 10,
+      "code": "class average {\n    public static void main(String args[]) {\n        double num[] = {5.5, 10.1, 11, 12.8, 56.9, 2.5};\n        double result;\n        result = 0;\n        for (int i = 0; i < 6; ++i)\n            result = result + num[i];\n        System.out.print(result/6);\n    }\n}"
+    },
+    {
+      "question": "What will be the output of the following Java statement?",
+      "options": [],
+      "correctOption": "d",
+      "points": 10,
+      "code": "class output {\n    public static void main(String args[]) {\n        double a, b, c;\n        a = 3.0/0;\n        b = 0/4.0;\n        c = 0/0.0;\n\n        System.out.println(a);\n        System.out.println(b);\n        System.out.println(c);\n    }\n}"
+    },
+    {
+      "question": "What will be the output of the following Java code?",
+      "options": [],
+      "correctOption": "c",
+      "points": 10,
+      "code": "class increment {\n    public static void main(String args[]) {\n        int g = 3;\n        System.out.print(++g * 8);\n    }\n}"
+    },
+    {
+      "question": "What will be the output of the following Java code?",
+      "options": [],
+      "correctOption": "a",
+      "points": 10,
+      "code": "class area {\n    public static void main(String args[]) {\n        double r, pi, a;\n        r = 9.8;\n        pi = 3.14;\n        a = pi * r * r;\n        System.out.println(a);\n    }\n}"
+    }
+  ]
+}

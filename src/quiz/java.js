@@ -127,7 +127,8 @@ function reducer(state, action) {
       };
     case "gotoQuestion":
       return { ...state, index: action.payload, answer: null };
-    
+    case "gotoFinished":
+      return { ...state, status: "finished" };
     default:
       throw new Error("Unrecognized action");
   }
@@ -271,7 +272,7 @@ export default function Java({ dis, cUser, quizStatus }) {
             />
           </>
         )}
-        <BackButton dispatch={dis} />
+        <BackButton dispatch={dis} status={status} dispatch1={dispatch} />
       </main>
     </div>
   );
