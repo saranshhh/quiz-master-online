@@ -5,6 +5,8 @@ import {
   signInWithEmailAndPassword,
   signOut,
   sendPasswordResetEmail,
+  updateCurrentUser,
+  updateProfile,
 } from "firebase/auth";
 
 const AuthContext = React.createContext();
@@ -60,12 +62,27 @@ export function AuthProvider({ children }) {
       });
   }
 
-  function signup(email, password) {
+  function signup(email, password, username) {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed up
-        // const user = userCredential.user;
-        // setCurrentUser(user);
+        const user = userCredential.user;
+        setCurrentUser(user);
+
+        if (user) {
+          updateProfile(user, {
+            displayName: username,
+          })
+            .then(() => {
+              console.log("User profile updated successfully!");
+            })
+            .catch((err) => {
+              console.log(err.code);
+              console.log(err.message);
+              alert("Failed to update user profile!");
+            });
+        }
+
         // ...
       })
       .catch((err) => {
@@ -81,6 +98,7 @@ export function AuthProvider({ children }) {
     login,
     logout,
     reset,
+    updateCurrentUser,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

@@ -7,7 +7,7 @@ export default function SideView({
   question,
   questions,
 }) {
-  const buttons = Array.from({ length: numQuestions }, (_, i) => i);
+  //const buttons = Array.from({ length: numQuestions }, (_, i) => i);
   //console.log(questions);
   let newQuestions = [];
   for (let i = 0; i < numQuestions; i++) {
@@ -27,25 +27,25 @@ export default function SideView({
     setHideButtons(!hideButtons);
   };
 
-  function addCorrectClass(id) {
-    newQuestions.forEach((question) => {
-      //console.log(question, question["attempted"], question["value"], id);
-      if (id === question["value"] && question["attempted"] === true) {
-        const button = document.querySelector(`#button-${id}`);
-        button.classList.add("correct-q");
-        console.log(button, id, question["value"]);
-      }
-    });
-  }
-  function removeCorrectClass(id) {
-    const button = document.querySelector(`#button-${id}`);
-    if (button) {
-      button.classList.remove("correct-q");
-    }
-  }
-  buttons.forEach((i) => {
-    addCorrectClass(i);
-  });
+  // function addCorrectClass(id) {
+  //   newQuestions.forEach((question) => {
+  //     //console.log(question, question["attempted"], question["value"], id);
+  //     if (id === question["value"] && question["attempted"] === true) {
+  //       const button = document.querySelector(`#button-${id}`);
+  //       button.classList.add("correct-q");
+  //       console.log(button, id, question["value"]);
+  //     }
+  //   });
+  // }
+  // function removeCorrectClass(id) {
+  //   const button = document.querySelector(`#button-${id}`);
+  //   if (button) {
+  //     button.classList.remove("correct-q");
+  //   }
+  // }
+  // buttons.forEach((i) => {
+  //   addCorrectClass(i);
+  // });
 
   return (
     <div
@@ -59,7 +59,9 @@ export default function SideView({
             </p>
 
             <button
-              className={`btn ${i["value"] === index ? "current-q" : ""} `}
+              className={`btn ${i["value"] === index ? "current-q" : ""}${
+                i["attempted"] === true ? "correct-q" : "incorrect-q"
+              } `}
               // i["value"] === index &&
               // questions[index].attemptedOption !== null
               //   ? "correct-q"
@@ -71,10 +73,10 @@ export default function SideView({
                 // console.log(i["value"]);
                 // //newQuestions[i["value"]]["attempted"] = true;
                 // console.log(newQuestions[i["value"] - 1]?.attempted);
-                addCorrectClass(i["value"]);
-                if (i["attempted"] === false) {
-                  removeCorrectClass(i["value"]);
-                }
+                // addCorrectClass(i["value"]);
+                // if (i["attempted"] === false) {
+                //   removeCorrectClass(i["value"]);
+                // }
               }}
             >
               {i["value"] + 1}

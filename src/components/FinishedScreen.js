@@ -63,8 +63,12 @@ export default function FinishedScreen({
       <p className="result">
         {emoji}You scored{" "}
         <strong>
-          {points} out of {maxPossiblePoints} ({Math.round(percentage)}%)
-          {negative ? <span> with {wrong} wrong answers</span> : null}
+          {points} out of {maxPossiblePoints} ({Math.round(percentage)}%)<br></br>
+          {negative ? <span> with {wrong} wrong answers</span> : null}<br></br>
+          Score Overview: Correct Answers: {points / 3 + wrong}<br></br>
+          Wrong Answers: {wrong} <br></br>
+          Score: {points} <br></br>
+          Max Score: {maxPossiblePoints}
         </strong>
       </p>
       <button

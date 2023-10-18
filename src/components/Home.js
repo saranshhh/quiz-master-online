@@ -34,9 +34,10 @@ export default function Home() {
   const [{ error, status }, dispatch] = useReducer(reducer, initialState);
 
   const { currentUser, logout } = useAuth();
-  let currUser;
+  let currUsername, currEmail;
   if (currentUser && currentUser.email) {
-    currUser = currentUser.email;
+    currEmail = currentUser.email;
+    currUsername = currentUser.displayName;
   }
 
   const navigate = useNavigate();
@@ -53,13 +54,13 @@ export default function Home() {
   return (
     <>
       {status === "webdev" && (
-        <WebDev dis={dispatch} cUser={currUser} quizStatus={status} />
+        <WebDev dis={dispatch} cUser={currUsername} quizStatus={status} />
       )}
       {status === "java" && (
-        <Java dis={dispatch} cUser={currUser} quizStatus={status} />
+        <Java dis={dispatch} cUser={currUsername} quizStatus={status} />
       )}
       {status === "python" && (
-        <Python dis={dispatch} cUser={currUser} quizStatus={status} />
+        <Python dis={dispatch} cUser={currUsername} quizStatus={status} />
       )}
       {status === "welcome" && (
         <>
@@ -71,6 +72,9 @@ export default function Home() {
                 <i>Welcome back!</i>{" "}
               </h3>
               {error && <Alert variant="danger">{error}</Alert>}
+              <strong>Name: </strong>
+              {currentUser && currentUser.displayName}
+              <br></br>
               <strong>Email: </strong>
               {currentUser && currentUser.email}
 
