@@ -9,6 +9,7 @@ function LogIn() {
   const passwordref = useRef();
   const { login } = useAuth();
   const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -20,6 +21,7 @@ function LogIn() {
       setLoading(true);
       console.log(emailref.current.value, passwordref.current.value);
       await login(emailref.current.value, passwordref.current.value);
+      setMessage("Logged in successfully.");
       navigate("/");
     } catch {
       setError("Failed to sign in.");
@@ -29,17 +31,24 @@ function LogIn() {
 
   return (
     <>
-      <Card>
-        <Card.Body>
-          <h1 className="text-center mb-auto">Log In</h1>
+      <Card style={{ borderRadius: "2rem" }}>
+        <Card.Body
+          style={{
+            minWidth: "65.4rem",
+            padding: "4rem",
+          }}
+        >
+          <h1 className="text-center mb-3 pd-auto fs-1 fw-bold">Sign In</h1>
           {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
+
+          {message && <Alert variant="success">{message}</Alert>}
+          <Form onSubmit={handleSubmit} className="fs-3">
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
               <Form.Control
                 type="email"
                 ref={emailref}
-                style={{ marginBottom: "1rem" }}
+                style={{ marginBottom: "1rem", fontSize: "1.2rem" }}
                 required
               ></Form.Control>
             </Form.Group>
@@ -47,7 +56,7 @@ function LogIn() {
             <Form.Group id="password">
               <Form.Label>Password</Form.Label>
               <Form.Control
-                style={{ marginBottom: "1rem" }}
+                style={{ marginBottom: "1rem", fontSize: "1.2rem" }}
                 type="password"
                 ref={passwordref}
                 required
@@ -57,19 +66,25 @@ function LogIn() {
             <Button
               type="submit"
               disabled={loading}
-              style={{ fontSize: "1.2rem", padding: "0.7rem 1.5rem" }}
+              className="login-bh"
+              style={{
+                fontSize: "2rem",
+                padding: "0.7rem 1rem",
+                minWidth: "65.4rem",
+                marginBottom: "1rem",
+              }}
             >
               Log In
             </Button>
           </Form>
-          <div className="w-100 text-center mt-3">
+          <div className="w-100 text-center mt-3 fs-5 log-text">
             <Link to="/forgot-password">Forgot Password?</Link>
+          </div>
+          <div className="w-100 text-center mt-2 fs-5  log-text">
+            Need an account? <Link to="/signup">Sign Up</Link>
           </div>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/signup">Sign Up</Link>
-      </div>
     </>
   );
 }

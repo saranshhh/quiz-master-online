@@ -8,6 +8,7 @@
     color: black;
   
   }
+  /* @import "../public/magicpattern-KfFmwa7m5VQ-unsplash.jpg"; */
 
   .error a{
     text-decoration: none;
@@ -61,9 +62,20 @@
     --color-dark: #495057;
     --color-medium: #ced4da;
     --color-light: #f1f3f5;
-  
     --color-theme: #1098ad;
     --color-accent: #ffa94d;
+
+    --color-dark-tangerine: #fda214;
+    --color-light-tangerine: #ffb84a;
+    --color-spindle: #bcced9;
+    --color-arapawa: #304859;
+    --color-tangaroa: #152938;
+    --color-white-smoke: #f2f2f2;
+    --color-bermuda-grey: #7191a5;
+    --color-shakespeare: #6395b8;
+    --color-pattens-blue: #dfe7ec;
+    --color-correct-green: #00b85f;
+    --color-incorrect-red: #ff6767;
   }
   
   @import url("https://fonts.googleapis.com/css2?family=Codystar&display=swap");
@@ -80,16 +92,31 @@
   }
 
   @import url('https://fonts.googleapis.com/css2?family=Martian+Mono&display=swap');
-  
+  /* @import url("https://images.unsplash.com/photo-1605106702734-205df224ecce?auto=format&fit=crop&q=80&w=1935&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
   body {
     min-height: 100vh;
-    color: var(--color-light);
-    background-color: var(--color-darkest);
+    color: var(---color-white-smoke);
+    background-color: var(--color-tangaroa);
     padding: 3.2rem;
     font-family: 'Martian Mono', monospace;
+    background-size: cover;
+  background-position: center;
+  /* background-image: url("./magicpattern-am-yg8wLLIo-unsplash.jpg"); */
+  background-image: url("./magicpattern-saRKnTHBEhU-unsplash.jpg");
+    /* background-image: url("./magicpattern-KfFmwa7m5VQ-unsplash.jpg"); */
+    /* background-image: url("https://images.unsplash.com/photo-1605106702734-205df224ecce?auto=format&fit=crop&q=80&w=1935&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") */
     
   }
-  
+
+  .log-text {
+    font-size: 1.6rem !important;
+    font-weight: bold !important;
+    
+    transition: font-size 0.6s ease-in-out !important;
+  }
+  .log-text:hover {
+    font-size: 170% !important;
+  }
 
   .buttonh:hover {
     background-color: var(--color-dark);
@@ -97,6 +124,19 @@
     color: var(--color-accent);
     border-radius: 4rem;
     padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  }
+
+  .login-bh {
+    background-color: var(--color-accent) !important;
+    border-color: var(--color-accent) !important;
+    border-radius: 2rem !important;
+  }
+
+  .login-bh:hover {
+    background-color: var(--color-shakespeare) !important;
+    border-color: var(--color-arapawa) !important;  
+    size: 110%  !important;
+    font-size: 2.4rem  !important;
   }
 
   .buttonh {

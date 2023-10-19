@@ -11,6 +11,7 @@ function SignUp() {
   const passwordConfirmref = useRef();
   const usernameref = useRef();
   const { signup } = useAuth();
+  const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -28,13 +29,14 @@ function SignUp() {
         emailref.current.value,
         passwordref.current.value,
         usernameref.current.value
-      );  
+      );
       await signup(
         emailref.current.value,
         passwordref.current.value,
         usernameref.current.value
       );
       //await updateCurrentUser(usernameref.current.value);
+      setMessage("Signup successful.");
       navigate("/");
     } catch {
       setError("Failed to create an account.");
@@ -44,17 +46,18 @@ function SignUp() {
 
   return (
     <>
-      <Card>
-        <Card.Body>
-          <h1 className="text-center mb-auto">Sign Up</h1>
+      <Card style={{ borderRadius: "2rem" }}>
+        <Card.Body style={{ minWidth: "65.4rem", padding: "3.5rem" }}>
+          <h1 className="text-center mb-auto pd-auto fs-1 fw-bold">Sign Up</h1>
           {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
+          {message && <Alert variant="success">{message}</Alert>}
+          <Form onSubmit={handleSubmit} className="fs-4">
             <Form.Group id="username">
               <Form.Label>Username</Form.Label>
               <Form.Control
                 type="input"
                 ref={usernameref}
-                style={{ marginBottom: "1rem" }}
+                style={{ marginBottom: "1rem", fontSize: "1.2rem" }}
                 required
               ></Form.Control>
             </Form.Group>
@@ -63,7 +66,7 @@ function SignUp() {
               <Form.Control
                 type="email"
                 ref={emailref}
-                style={{ marginBottom: "1rem" }}
+                style={{ marginBottom: "1rem", fontSize: "1.2rem" }}
                 required
               ></Form.Control>
             </Form.Group>
@@ -74,14 +77,14 @@ function SignUp() {
                 type="password"
                 ref={passwordref}
                 required
-                style={{ marginBottom: "1rem" }}
+                style={{ marginBottom: "1rem", fontSize: "1.2rem" }}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group id="password-confirm">
               <Form.Label>Password Confirmation</Form.Label>
               <Form.Control
-                style={{ marginBottom: "1rem" }}
+                style={{ marginBottom: "1rem", fontSize: "1.2rem" }}
                 type="password"
                 ref={passwordConfirmref}
                 required
@@ -90,16 +93,22 @@ function SignUp() {
             <Button
               type="submit"
               disabled={loading}
-              style={{ fontSize: "1.2rem", padding: "0.7rem 1.5rem" }}
+              className="login-bh"
+              style={{
+                fontSize: "2rem",
+                padding: "0.7rem 1rem",
+                minWidth: "65.4rem",
+                marginBottom: "1rem",
+              }}
             >
               Sign Up
             </Button>
           </Form>
+          <div className="w-100 text-center mt-3 fs-5 log-text">
+            Already have an account? <Link to="/login">Log In</Link>
+          </div>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
-        Already have an account? <Link to="/login">Log In</Link>
-      </div>
     </>
   );
 }

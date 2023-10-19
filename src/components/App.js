@@ -7,10 +7,10 @@ import PrivateRoute from "./PrivateRoute";
 import Home from "./Home";
 import LogIn from "./Login";
 import Forgot from "./Forgot";
-import WebDev from "../quiz/webdev";
-import Java from "../quiz/java";
+// import WebDev from "../quiz/webdev";
+// import Java from "../quiz/java";
+// import Python from "../quiz/python";
 import AppNavBar from "./AppNavBar";
-import Python from "../quiz/python";
 
 function App() {
   //let cUser = User();
@@ -20,9 +20,9 @@ function App() {
 
       <Container
         className="d-flex align-items-center justify-content-center"
-        style={{ minHeight: "100vh" }}
+        style={{ minHeight: "80vh" }}
       >
-        <div className="w-100" style={{ maxWidth: "50rem" }}>
+        <div>
           <BrowserRouter>
             <AuthProvider>
               <Routes>

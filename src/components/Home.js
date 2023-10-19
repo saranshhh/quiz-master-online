@@ -66,7 +66,8 @@ export default function Home() {
       {status === "welcome" && (
         <>
           {" "}
-          <Card style={{ height: "29vh", maxWidth: "500px", margin: "0 auto" }}>
+          {/* //style={{ height: "29vh", maxWidth: "500px", margin: "0 auto" }} */}
+          <Card className="bg-dark text-white" border="success">
             <Card.Body className="text-center">
               <h1 className="text-center mb-auto">Profile</h1>
               <h3>
