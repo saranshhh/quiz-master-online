@@ -19,8 +19,8 @@ function App() {
       <AppNavBar />
 
       <Container
-        className="d-flex align-items-center justify-content-center"
-        style={{ minHeight: "80vh" }}
+        
+        style={{ minHeight: "75vh" }}
       >
         <div>
           <BrowserRouter>

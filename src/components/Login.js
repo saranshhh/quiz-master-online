@@ -30,7 +30,10 @@ function LogIn() {
   }
 
   return (
-    <>
+    <div
+      className="d-flex justify-content-center align-items-center"
+      style={{ minHeight: "79vh", paddingTop: "1.9rem" }}
+    >
       <Card style={{ borderRadius: "2rem" }}>
         <Card.Body
           style={{
@@ -85,7 +88,7 @@ function LogIn() {
           </div>
         </Card.Body>
       </Card>
-    </>
+    </div>
   );
 }
 

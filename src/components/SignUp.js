@@ -45,7 +45,10 @@ function SignUp() {
   }
 
   return (
-    <>
+    <div
+      className="d-flex justify-content-center align-items-center"
+      style={{ minHeight: "79vh" }}
+    >
       <Card style={{ borderRadius: "2rem" }}>
         <Card.Body style={{ minWidth: "65.4rem", padding: "3.5rem" }}>
           <h1 className="text-center mb-auto pd-auto fs-1 fw-bold">Sign Up</h1>
@@ -109,7 +112,7 @@ function SignUp() {
           </div>
         </Card.Body>
       </Card>
-    </>
+    </div>
   );
 }
 

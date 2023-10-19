@@ -10,7 +10,7 @@ export default function StartScreen({
 }) {
   const mins = Math.floor(secondsRemaining / 60);
   return (
-    <div style={{ textAlign: "center" }}>
+    <div style={{ textAlign: "center",  backgroundColor: "rgba(0, 0, 0, 0.4)" }}>
       <h1>
         Welcome {cUser}, to the quiz on {name}
       </h1>

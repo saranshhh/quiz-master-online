@@ -173,6 +173,7 @@ export default function Java({ dis, cUser, quizStatus }) {
   return (
     <div>
       <main>
+        <BackButton dispatch={dis} status={status} dispatch1={dispatch} />
         {status === "loading" && <Loader />}
         {status === "error" && <Error />}
         {status === "ready" && (
@@ -272,7 +273,6 @@ export default function Java({ dis, cUser, quizStatus }) {
             />
           </>
         )}
-        <BackButton dispatch={dis} status={status} dispatch1={dispatch} />
       </main>
     </div>
   );

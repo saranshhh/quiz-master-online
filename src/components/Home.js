@@ -64,40 +64,14 @@ export default function Home() {
         <Python dis={dispatch} cUser={currUsername} quizStatus={status} />
       )}
       {status === "welcome" && (
-        <>
-          {" "}
-          {/* //style={{ height: "29vh", maxWidth: "500px", margin: "0 auto" }} */}
-          <Card className="bg-dark text-white" border="success">
-            <Card.Body className="text-center">
-              <h1 className="text-center mb-auto">Profile</h1>
-              <h3>
-                <i>Welcome back!</i>{" "}
-              </h3>
-              {error && <Alert variant="danger">{error}</Alert>}
-              <strong>Name: </strong>
-              {currentUser && currentUser.displayName}
-              <br></br>
-              <strong>Email: </strong>
-              {currentUser && currentUser.email}
-
-              <div
-                className="w-100 text-center mt-2"
-                style={{ display: "flex", justifyContent: "center" }}
-              >
-                <Button variant="link" onClick={handleLogOut}>
-                  Log Out
-                </Button>
-              </div>
-            </Card.Body>
-
-            {/* <div className="w-10  text-center mb-3">
-            <Button variant="link" href="/guidelines">
-              Guidelines
-            </Button>
-          </div> */}
-          </Card>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <div className="w-30 text-center mt-3 mr-2 ">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div style={{ display: "grid" }}>
+            <div className="">
               <Button
                 onClick={() => {
                   dispatch({ type: "setWeb" });
@@ -125,7 +99,36 @@ export default function Home() {
               </Button>
             </div>
           </div>
-        </>
+          {/* //style={{ height: "29vh", maxWidth: "500px", margin: "0 auto" }} */}
+          <Card className="bg-white text-dark" border="success">
+            <Card.Body className="text-center">
+              <h1 className="text-center mb-auto">Profile</h1>
+              <h3>
+                <i>Welcome back!</i>{" "}
+              </h3>
+              {error && <Alert variant="danger">{error}</Alert>}
+              <strong>Name: </strong>
+              {currentUser && currentUser.displayName}
+              <br></br>
+              <strong>Email: </strong>
+              {currentUser && currentUser.email}
+
+              <div
+                className="w-100 text-center mt-2"
+                style={{ display: "flex", justifyContent: "center" }}
+              ></div>
+              <Button variant="link" onClick={handleLogOut}>
+                Log Out
+              </Button>
+            </Card.Body>
+
+            {/* <div className="w-10  text-center mb-3">
+            <Button variant="link" href="/guidelines">
+              Guidelines
+            </Button>
+          </div> */}
+          </Card>
+        </div>
       )}
     </>
   );

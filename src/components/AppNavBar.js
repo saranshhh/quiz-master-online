@@ -42,6 +42,13 @@ function AppNavbar() {
             style={{ fontSize: "1.5rem" }}
             href="/my-quizzes"
           >
+            Guidelines
+          </Nav.Link>
+          <Nav.Link
+            className="mr-3"
+            style={{ fontSize: "1.5rem" }}
+            href="/my-quizzes"
+          >
             Contact Us
           </Nav.Link>
         </Nav>
