@@ -20,7 +20,7 @@ export default function BackButton({ dispatch, status, dispatch1 }) {
 
   return (
     <div>
-      <button className="btn btn-ui" onClick={handleGoBack}>
+      <button className="btn home-bh-logout" onClick={handleGoBack}>
         {status === "active" ? "Quit" : "Go Back"}
       </button>
     </div>

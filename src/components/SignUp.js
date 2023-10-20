@@ -56,7 +56,7 @@ function SignUp() {
           {message && <Alert variant="success">{message}</Alert>}
           <Form onSubmit={handleSubmit} className="fs-4">
             <Form.Group id="username">
-              <Form.Label>Username</Form.Label>
+              <Form.Label>Enter Your Name</Form.Label>
               <Form.Control
                 type="input"
                 ref={usernameref}

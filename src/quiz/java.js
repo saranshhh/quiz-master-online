@@ -172,7 +172,7 @@ export default function Java({ dis, cUser, quizStatus }) {
   }, []); // useEffect( function, [array of variables to watch for changes] )
   return (
     <div>
-      <main>
+      <main >
         <BackButton dispatch={dis} status={status} dispatch1={dispatch} />
         {status === "loading" && <Loader />}
         {status === "error" && <Error />}

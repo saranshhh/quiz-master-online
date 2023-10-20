@@ -71,57 +71,103 @@ export default function Home() {
           }}
         >
           <div style={{ display: "grid" }}>
-            <div className="">
+            <div className="text">
+              <h2 className="w-30  mt-3 mx-2">Computer Subjects</h2>
+            </div>
+
+            <div className="w-30 text-center  mx-2 ">
               <Button
+                className="home-bh"
                 onClick={() => {
                   dispatch({ type: "setWeb" });
                 }}
               >
-                Quiz On Web Development
+                DBMS
               </Button>
             </div>
-            <div className="w-30 text-center mt-3 mx-2">
+            <div className="text">
+              <h2 className="w-30  mt-2 mx-2">Developmet</h2>
+            </div>
+
+            <div className="w-30 text-center mx-2 ">
               <Button
+                className="home-bh"
                 onClick={() => {
-                  dispatch({ type: "setJava" });
+                  dispatch({ type: "setWeb" });
                 }}
               >
-                JAVA QUIZ
+                Web Development
               </Button>
             </div>
-            <div className="w-30 text-center mt-3 ml-2">
-              <Button
-                onClick={() => {
-                  dispatch({ type: "setPython" });
-                }}
-              >
-                Python QUIZ
-              </Button>
+            <div className="text">
+              <h2 className="w-30  mt-2 mx-2">Programming Languages</h2>
+            </div>
+            <div className="d-flex flex-wrap">
+              <div className="w-30 text-center mt-2">
+                <Button
+                  className="home-bh"
+                  onClick={() => {
+                    dispatch({ type: "setJava" });
+                  }}
+                >
+                  Java
+                </Button>
+              </div>
+              <div className="w-30 text-center mt-2 ">
+                <Button
+                  className="home-bh"
+                  onClick={() => {
+                    dispatch({ type: "setPython" });
+                  }}
+                >
+                  Python
+                </Button>
+              </div>
+            </div>
+
+            <div>
+              <div className="text">
+                <h2 className="w-30  mt-3 mx-2">Programming Concepts</h2>
+              </div>
+
+              <div className={`w-30 text-center mt-3 mx-2  `}>
+                <Button
+                  className="home-bh"
+                  onClick={() => {
+                    dispatch({ type: "setWeb" });
+                  }}
+                >
+                  OOP
+                </Button>
+              </div>
             </div>
           </div>
           {/* //style={{ height: "29vh", maxWidth: "500px", margin: "0 auto" }} */}
-          <Card className="bg-white text-dark" border="success">
-            <Card.Body className="text-center">
-              <h1 className="text-center mb-auto">Profile</h1>
-              <h3>
-                <i>Welcome back!</i>{" "}
+
+          <Card className="home-prof text-white text-right d-flex flex-row">
+            <Card.Body className="text-left ">
+              <h3
+                className="text-center mb-auto "
+                style={{ marginTop: "1.3rem" }}
+              >
+                Logged in as: {currentUser && currentUser.displayName}
               </h3>
+              {/* <h3>
+                <i>Welcome back!</i>{" "}
+              </h3> */}
               {error && <Alert variant="danger">{error}</Alert>}
-              <strong>Name: </strong>
-              {currentUser && currentUser.displayName}
+              <strong></strong>
               <br></br>
-              <strong>Email: </strong>
-              {currentUser && currentUser.email}
-
-              <div
-                className="w-100 text-center mt-2"
-                style={{ display: "flex", justifyContent: "center" }}
-              ></div>
-              <Button variant="link" onClick={handleLogOut}>
-                Log Out
-              </Button>
+              {/* <strong>Email: </strong>
+              {currentUser && currentUser.email} */}
             </Card.Body>
-
+            <Button
+              className="home-bh-logout float-right mx-2"
+              onClick={handleLogOut}
+              style={{ maxHeight: "5rem" }}
+            >
+              Log Out
+            </Button>
             {/* <div className="w-10  text-center mb-3">
             <Button variant="link" href="/guidelines">
               Guidelines

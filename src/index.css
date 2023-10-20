@@ -140,6 +140,50 @@
     font-size: 2.4rem  !important;
   }
 
+  .home-bh {
+    background-color: var(--color-accent) !important;
+    border-color: var(--color-accent) !important;
+    border-radius: 2rem !important;
+  }
+
+  .home-bh:hover {
+    background-color: var(--color-shakespeare) !important;
+    border-color: var(--color-arapawa) !important;  
+    size: 100%  !important;
+    font-size: 2rem  !important;
+  }
+
+  .home-bh-logout {
+    background-color: var(--color-shakespeare) !important;
+    border-color: var(--color-arapawa) !important;  
+    border-radius: 2rem !important;
+  }
+
+  .home-bh-logout:hover {
+    
+    background-color: var(--color-accent) !important;
+    border-color: var(--color-accent) !important;
+    /* size: 100%  !important;
+    font-size: 2rem  !important; */
+  }
+
+  .text {
+    color: #fff;
+    font-weight: 1000 !important;
+  }
+  .text:hover {
+    font-size: 3rem !important;
+    text-decoration: underline !important
+  }
+
+  .visible {
+    display: block !important;
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+
   .buttonh {
     border-radius: 3.5rem;
     font-size: 2rem;
@@ -306,4 +350,12 @@ th {
 .not-selected {
 
   background-color: var(--color-accent);
+}
+
+.home-prof{
+  /* background-color: var(--color-dark-tangerine) !important; */
+  background: rgba(0, 0, 0, 0 )!important;
+  border: rgba(0, 0, 0, 0 )!important;
+        /* backdrop-filter: saturate(180%) blur(10px) !important;
+        border-radius: 2rem !important; */
 }
