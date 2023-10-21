@@ -1,3 +1,4 @@
+import { set } from "mongoose";
 import React, { useState } from "react";
 
 export default function SideView({
@@ -47,6 +48,20 @@ export default function SideView({
   // buttons.forEach((i) => {
   //   addCorrectClass(i);
   // });
+  const [infoShow, setInfoShow] = useState(false);
+  function toggleInfo() {
+    setInfoShow(!infoShow);
+  }
+
+  const tag = (
+    <div>
+      <ul>
+        <li style={{ color: "#9c67ff" }}>Not Seen</li>
+        <li style={{ color: "#a3cf97" }}>Attempted</li>
+        <li style={{ color: "#ff6767" }}>Not Attempted</li>
+      </ul>{" "}
+    </div>
+  );
 
   return (
     <div
@@ -81,8 +96,11 @@ export default function SideView({
           </div>
         ))}
 
-      <button className="btn btn-ui" onClick={toggleHideButtons}>
+      <button className="btn btn-n-p" onClick={toggleHideButtons}>
         {hideButtons ? "Show Buttons" : "Hide Buttons"}
+      </button>
+      <button className="btn btn-n-p" onClick={toggleInfo}>
+        {infoShow ? tag : "Show Info"}
       </button>
     </div>
   );

@@ -5,7 +5,7 @@ export default function PrevButton({ dispatch, answer, index }) {
 
   return (
     <button
-      className="btn btn-ui"
+      className="btn btn-n-p"
       {...(index === 0 && { disabled: true })}
       onClick={() => dispatch({ type: "prevQuestion" })}
     >

@@ -69,7 +69,7 @@ export default function Question({ question, dispatch, answer }) {
         ))}
       </div>
       <button
-        className="btn"
+        className="btn btn-n-p"
         onClick={() => {
           dispatch({ type: "resetOption" });
         }}

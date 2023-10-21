@@ -8,6 +8,8 @@ export default function StartScreen({
   cUser,
   negative,
 }) {
+  let nav = document.getElementById("nav");
+  if (nav) nav.classList.add("hide-nav");
   const mins = Math.floor(secondsRemaining / 60);
   return (
     <div

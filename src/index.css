@@ -244,11 +244,12 @@
 	font-family: inherit;
 	color: inherit;
 	font-size: 1.5rem;
-	border: 2px solid var(--color-dark);
+  max-width: 55rem;
+	border: 2px solid var(--color-dark-tangerine);
 	background-color: var(--color-light-tangerine);
 	padding: 1.2rem 2.4rem;
 	cursor: pointer;
-	border-radius: 100px;
+	border-radius: 2rem;
 	transition: 0.3s;
   margin: 1rem 1rem 0rem 0rem;
 }
@@ -273,13 +274,15 @@
 	color: black;
 	font-size: 1.5rem;
 	
-	background-color: rgba(0, 0, 0, 0 );
+	background-color: rgba(0, 0, 0, 0.5 );
 	padding: 1.2rem 2.4rem;
 	cursor: pointer;
 	border-radius: 100px;
 	transition: 0.3s;
   margin: 1rem 1rem 0rem 0rem;
 }
+
+
 
 .btn-option {
 	width: 100%;
@@ -304,11 +307,15 @@
 	color: var(--color-darkest-text);
 }
 
+.hide-nav {
+  display: none;
+}
+
 .current-q{
     font-size: 2rem;
-    color: black;
-    background-color: #cf97c3 !important;
-    border: 2px solid #cf97c3;
+    color: white !important;
+    background-color: var(--color-arapawa)!important;
+    border: 2px solid var(--color-arapawa) !important;
 
 }
 
@@ -380,7 +387,8 @@ th {
 }
 
 .selected {
-  background-color: #cf97c3;
+  background-color: #6395b8;
+  border: 2px solid var(--color-arapawa);
   color: #000;
 }
 
