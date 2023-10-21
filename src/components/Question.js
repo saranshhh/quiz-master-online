@@ -1,6 +1,8 @@
 import React from "react";
 
 export default function Question({ question, dispatch, answer }) {
+  question.seen = true;
+  console.log(question.seen);
   // if (question.attempted === true) {
   //   return (
   //     <div>

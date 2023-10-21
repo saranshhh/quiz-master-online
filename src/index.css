@@ -76,6 +76,7 @@
     --color-pattens-blue: #dfe7ec;
     --color-correct-green: #00b85f;
     --color-incorrect-red: #ff6767;
+    --color-incorrect-violet: #9c67ff;
   }
   
   @import url("https://fonts.googleapis.com/css2?family=Codystar&display=swap");
@@ -212,16 +213,17 @@
     border-radius: 100px;
   }
   ::-webkit-progress-value {
-    background-color: var(--color-theme);
+    background-color: var(--color-correct-green);
     border-radius: 100px;
   }
 
   .timer {
-	float: left;
-	font-size: 1.2rem;
-	color: var(--color-medium);
+  max-width: 9rem;
+	font-size: 1.7rem;
+	color: black;
 	border: 2px solid var(--color-dark);
-	padding: 1.2rem 2.4rem;
+  background-color: var(--color-spindle);
+	padding: 1.4rem 1.6rem;
 	border-radius: 100px;
 	transition: transform 0.3s, background-color 0.3s;
 
@@ -243,12 +245,40 @@
 	color: inherit;
 	font-size: 1.5rem;
 	border: 2px solid var(--color-dark);
-	background-color: var(--color-dark);
+	background-color: var(--color-light-tangerine);
 	padding: 1.2rem 2.4rem;
 	cursor: pointer;
 	border-radius: 100px;
 	transition: 0.3s;
-    margin: 1rem 1rem 0rem 0rem;
+  margin: 1rem 1rem 0rem 0rem;
+}
+
+.btn-n-p {
+	display: block;
+	font-family: inherit;
+	color: white;
+	font-size: 1.5rem;
+	border: 2px solid var(--color-tangaroa);
+	background-color: var(--color-arapawa);
+	padding: 1.2rem 2.4rem;
+	cursor: pointer;
+	border-radius: 100px;
+	transition: 0.3s;
+  margin: 1rem 1rem 0rem 0rem;
+}
+
+.btn-n-p:hover {
+	display: block;
+	font-family: inherit;
+	color: black;
+	font-size: 1.5rem;
+	
+	background-color: rgba(0, 0, 0, 0 );
+	padding: 1.2rem 2.4rem;
+	cursor: pointer;
+	border-radius: 100px;
+	transition: 0.3s;
+  margin: 1rem 1rem 0rem 0rem;
 }
 
 .btn-option {
@@ -277,7 +307,7 @@
 .current-q{
     font-size: 2rem;
     color: black;
-    background-color: #cf97c3;
+    background-color: #cf97c3 !important;
     border: 2px solid #cf97c3;
 
 }
@@ -300,6 +330,13 @@
     color: black;
     background-color: #ff6767;
     border: 2px solid #ff6767;
+}
+
+.not-attempt-q{
+  font-size: 2rem;
+  color: black;
+  background-color: #9a67ff;
+  border: 2px solid #9a67ff;
 }
 
 /* Define styles for code in Theme 1 */

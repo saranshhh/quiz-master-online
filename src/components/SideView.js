@@ -11,11 +11,12 @@ export default function SideView({
   //console.log(questions);
   let newQuestions = [];
   for (let i = 0; i < numQuestions; i++) {
-    console.log(questions[i].attempted);
+    //console.log(questions[i].attempted);
     newQuestions.push({
       value: i,
       attempted: questions[i].attempted,
       attemptedOption: question.attemptedOption,
+      seen: questions[i].seen,
     });
   }
   //console.log(newQuestions);
@@ -49,38 +50,37 @@ export default function SideView({
 
   return (
     <div
-      style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
+      style={{
+        display: "flex",
+        justifyContent: "center ",
+        flexWrap: "wrap",
+        maxWidth: "20rem",
+        maxHeight: "10rem",
+        textAlign: "center",
+      }}
     >
       {!hideButtons &&
         newQuestions.map((i) => (
-          <div style={{ margin: "0.5rem", flexBasis: "20%" }}>
-            
-
+          <div style={{ margin: "0.3rem", flexBasis: "10%" }}>
             <button
-              className={`btn ${i["value"] === index ? "current-q" : ""}${
-                i["attempted"] === true ? "correct-q" : "incorrect-q"
-              } `}
-              // i["value"] === index &&
-              // questions[index].attemptedOption !== null
-              //   ? "correct-q"
-              //   : ""
-
+              className={`btn ${i["seen"] === false ? "not-attempt-q" : ""} ${
+                i["value"] === index ? "current-q" : ""
+              }  ${i["attempted"] === true ? "correct-q" : "incorrect-q"} }`}
               id={`button-${i["value"]}`}
               onClick={() => {
                 dispatch({ type: "gotoQuestion", payload: i["value"] });
-                // console.log(i["value"]);
-                // //newQuestions[i["value"]]["attempted"] = true;
-                // console.log(newQuestions[i["value"] - 1]?.attempted);
-                // addCorrectClass(i["value"]);
-                // if (i["attempted"] === false) {
-                //   removeCorrectClass(i["value"]);
-                // }
+              }}
+              style={{
+                padding: "5px 10px", // Reduce padding to make the button more compact
+                fontSize: "18px", // Reduce font size
               }}
             >
-              {i["value"] + 1}
+              {}
+              {i["value"] + 1 < 10 ? "0" + (i["value"] + 1) : i["value"] + 1}
             </button>
           </div>
         ))}
+
       <button className="btn btn-ui" onClick={toggleHideButtons}>
         {hideButtons ? "Show Buttons" : "Hide Buttons"}
       </button>

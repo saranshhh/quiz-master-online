@@ -58,6 +58,7 @@ function reducer(state, action) {
         ...question,
         attempted: false,
         attemptedOption: null,
+        seen: false,
       }));
       shuffleArray(questions);
       return { ...state, questions: questions, status: "ready" };
@@ -110,6 +111,7 @@ function reducer(state, action) {
           ...q,
           attempted: false,
           attemptedOption: null,
+          seen: false,
         })),
         status: "ready",
       };
@@ -172,7 +174,7 @@ export default function Java({ dis, cUser, quizStatus }) {
   }, []); // useEffect( function, [array of variables to watch for changes] )
   return (
     <div>
-      <main >
+      <main>
         <BackButton dispatch={dis} status={status} dispatch1={dispatch} />
         {status === "loading" && <Loader />}
         {status === "error" && <Error />}
@@ -189,7 +191,14 @@ export default function Java({ dis, cUser, quizStatus }) {
           </>
         )}
         {status === "active" && (
-          <>
+          <div
+            style={{
+              backgroundColor: "white",
+              padding: "3rem",
+              borderRadius: "3rem",
+              marginTop: "2rem",
+            }}
+          >
             <div
               style={{
                 display: "flex",
@@ -197,14 +206,17 @@ export default function Java({ dis, cUser, quizStatus }) {
                 paddingBottom: "1rem",
               }}
             >
-              <PrevButton dispatch={dispatch} answer={answer} index={index} />
               <Timer dispatch={dispatch} secondsRemaining={secondsRemaining} />
-              <NextButton
-                dispatch={dispatch}
-                answer={answer}
-                index={index}
-                numQuestions={numbersQs}
-              />
+              <div className="d-flex">
+                <PrevButton dispatch={dispatch} answer={answer} index={index} />
+
+                <NextButton
+                  dispatch={dispatch}
+                  answer={answer}
+                  index={index}
+                  numQuestions={numbersQs}
+                />
+              </div>
             </div>
             <Progress
               index={index}
@@ -213,22 +225,27 @@ export default function Java({ dis, cUser, quizStatus }) {
               maxPossiblePoints={maxPossiblePoints}
               answer={answer}
             />
-            <Question
-              question={questions[index]}
-              dispatch={dispatch}
-              answer={answer}
-            />
-            <SideView
-              numQuestions={numbersQs}
-              dispatch={dispatch}
-              index={index}
-              question={questions[index]}
-              questions={questions}
-            />
-            <footer
-              style={{ display: "flex", justifyContent: "space-between" }}
-            ></footer>
-          </>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                paddingBottom: "1rem",
+              }}
+            >
+              <Question
+                question={questions[index]}
+                dispatch={dispatch}
+                answer={answer}
+              />
+              <SideView
+                numQuestions={numbersQs}
+                dispatch={dispatch}
+                index={index}
+                question={questions[index]}
+                questions={questions}
+              />
+            </div>
+          </div>
         )}
         {status === "finished" && (
           <FinishedScreen
@@ -242,7 +259,14 @@ export default function Java({ dis, cUser, quizStatus }) {
           />
         )}
         {status === "result" && (
-          <>
+          <div
+            style={{
+              backgroundColor: "white",
+              padding: "3rem",
+              borderRadius: "3rem",
+              marginTop: "2rem",
+            }}
+          >
             <div
               style={{
                 display: "flex",
@@ -271,7 +295,7 @@ export default function Java({ dis, cUser, quizStatus }) {
               question={questions[index]}
               questions={questions}
             />
-          </>
+          </div>
         )}
       </main>
     </div>

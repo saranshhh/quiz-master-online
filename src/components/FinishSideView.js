@@ -15,6 +15,7 @@ export default function SideView({
     newQuestions.push({
       value: i,
       correct: questions[i].correctOption === questions[i].attemptedOption,
+      attempted: questions[i].attempted,
     });
   }
   //console.log(newQuestions);
@@ -58,7 +59,13 @@ export default function SideView({
             <button
               className={`btn ${
                 i["value"] === index ? "final-current-q" : ""
-              } ${i["correct"] === true ? "correct-q" : "incorrect-q"}`}
+              } ${
+                i["correct"] === true
+                  ? "correct-q"
+                  : i["attempted"] === true
+                  ? "incorrect-q"
+                  : "not-attempt-q"
+              }`}
               // i["value"] === index &&
               // questions[index].attemptedOption !== null
               //   ? "correct-q"
@@ -73,6 +80,7 @@ export default function SideView({
               id={`button-${i["value"]}`}
               onClick={() => {
                 dispatch({ type: "gotoQuestion", payload: i["value"] });
+                console.log(i["attempted"]);
                 // console.log(i["value"]);
                 // //newQuestions[i["value"]]["attempted"] = true;
                 // console.log(newQuestions[i["value"] - 1]?.attempted);
