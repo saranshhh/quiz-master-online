@@ -231,11 +231,13 @@
 
 .timer.pulse {
 	transform: scale(1.5);
-	background-color: #5a646e;
+	background-color: var(--color-dark);
+  color: var(--color-light-text);
 }
 
 .timer.warning {
-	background-color: #5a646e;
+	background-color: #684949;
+  color: var(--color-light-text);
 	font-weight: bold;
 }
 
@@ -291,9 +293,9 @@
 }
 
 .btn-option.correct {
-	background-color: var(--color-theme);
-	border: 2px solid var(--color-theme);
-	color: var(--color-light-text);
+	background-color: #1f8f00;
+	border: 2px solid #1f8f00;
+	color: white;
 }
 
 .btn-option.correct-animate {
@@ -302,9 +304,9 @@
 }
 
 .btn-option.wrong {
-	background-color: var(--color-accent);
-	border: 2px solid var(--color-accent);
-	color: var(--color-darkest-text);
+	background-color: #f64141;
+	border: 2px solid #f64141;
+	color: white;
 }
 
 .hide-nav {

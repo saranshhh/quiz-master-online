@@ -51,11 +51,18 @@ export default function SideView({
 
   return (
     <div
-      style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
+      style={{
+        display: "flex",
+        justifyContent: "center ",
+        flexWrap: "wrap",
+        maxWidth: "20rem",
+        maxHeight: "10rem",
+        textAlign: "center",
+      }}
     >
       {!hideButtons &&
         newQuestions.map((i) => (
-          <div style={{ margin: "0.5rem", flexBasis: "20%" }}>
+          <div style={{ margin: "0.3rem", flexBasis: "20%" }}>
             <button
               className={`btn ${
                 i["value"] === index ? "final-current-q" : ""
@@ -66,28 +73,15 @@ export default function SideView({
                   ? "incorrect-q"
                   : "not-attempt-q"
               }`}
-              // i["value"] === index &&
-              // questions[index].attemptedOption !== null
-              //   ? "correct-q"
-              //   : ""
-
-              // ${
-              //   i["value"] === index && i["correct"]
-              //     ? "correct-q"
-              //     : "incorrect-q"
-              // }`
-
               id={`button-${i["value"]}`}
               onClick={() => {
                 dispatch({ type: "gotoQuestion", payload: i["value"] });
                 console.log(i["attempted"]);
-                // console.log(i["value"]);
-                // //newQuestions[i["value"]]["attempted"] = true;
-                // console.log(newQuestions[i["value"] - 1]?.attempted);
                 addCorrectClass(i["value"]);
-                // buttons.forEach((i) => {
-                //   addCorrectClass(i);
-                // });
+              }}
+              style={{
+                padding: "5px 10px", // Reduce padding to make the button more compact
+                fontSize: "18px", // Reduce font size
               }}
             >
               {i["value"] + 1}
@@ -100,49 +94,3 @@ export default function SideView({
     </div>
   );
 }
-
-// import React, { useState } from "react";
-
-// export default function FinishSideView({
-//   numQuestions,
-//   dispatch,
-//   index,
-//   question,
-// }) {
-//   const buttons = Array.from({ length: numQuestions }, (_, i) => i);
-//   const [hideButtons, setHideButtons] = useState(false);
-
-//   const toggleHideButtons = () => {
-//     setHideButtons(!hideButtons);
-//   };
-
-//   return (
-//     <div
-//       style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
-//     >
-//       {!hideButtons &&
-//         buttons.map((i) => (
-//           <div key={i} style={{ margin: "0.5rem", flexBasis: "20%" }}>
-//             <button
-//               className={`btn ${i === index ? "current-q" : ""} ${
-//                 i === index &&
-//                 question.attemptedOption === question.correctOption
-//                   ? "correct-q"
-//                   : question.attemptedOption !== question.correctOption
-//                   ? "incorrect-q"
-//                   : ""
-//               }`}
-//               onClick={() => {
-//                 dispatch({ type: "gotoQuestion", payload: i });
-//               }}
-//             >
-//               {i + 1}
-//             </button>
-//           </div>
-//         ))}
-//       <button className="btn btn-ui" onClick={toggleHideButtons}>
-//         {hideButtons ? "Show Buttons" : "Hide Buttons"}
-//       </button>
-//     </div>
-//   );
-// }

@@ -1,4 +1,3 @@
-import { set } from "mongoose";
 import React, { useState } from "react";
 
 export default function SideView({
@@ -8,11 +7,8 @@ export default function SideView({
   question,
   questions,
 }) {
-  //const buttons = Array.from({ length: numQuestions }, (_, i) => i);
-  //console.log(questions);
   let newQuestions = [];
   for (let i = 0; i < numQuestions; i++) {
-    //console.log(questions[i].attempted);
     newQuestions.push({
       value: i,
       attempted: questions[i].attempted,
@@ -20,34 +16,13 @@ export default function SideView({
       seen: questions[i].seen,
     });
   }
-  //console.log(newQuestions);
 
   const [hideButtons, setHideButtons] = useState(false);
-  //const [qq, setQq] = useState(newQuestions);
 
   const toggleHideButtons = () => {
     setHideButtons(!hideButtons);
   };
 
-  // function addCorrectClass(id) {
-  //   newQuestions.forEach((question) => {
-  //     //console.log(question, question["attempted"], question["value"], id);
-  //     if (id === question["value"] && question["attempted"] === true) {
-  //       const button = document.querySelector(`#button-${id}`);
-  //       button.classList.add("correct-q");
-  //       console.log(button, id, question["value"]);
-  //     }
-  //   });
-  // }
-  // function removeCorrectClass(id) {
-  //   const button = document.querySelector(`#button-${id}`);
-  //   if (button) {
-  //     button.classList.remove("correct-q");
-  //   }
-  // }
-  // buttons.forEach((i) => {
-  //   addCorrectClass(i);
-  // });
   const [infoShow, setInfoShow] = useState(false);
   function toggleInfo() {
     setInfoShow(!infoShow);

@@ -282,19 +282,27 @@ export default function Java({ dis, cUser, quizStatus }) {
                 numQuestions={numbersQs}
               />
             </div>
-            <ShowAttempted
-              question={questions[index]}
-              dispatch={dispatch}
-              answer={answer}
-              index={index}
-            />
-            <FinishSideView
-              numQuestions={numbersQs}
-              dispatch={dispatch}
-              index={index}
-              question={questions[index]}
-              questions={questions}
-            />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                paddingBottom: "1rem",
+              }}
+            >
+              <ShowAttempted
+                question={questions[index]}
+                dispatch={dispatch}
+                answer={answer}
+                index={index}
+              />
+              <FinishSideView
+                numQuestions={numbersQs}
+                dispatch={dispatch}
+                index={index}
+                question={questions[index]}
+                questions={questions}
+              />
+            </div>
           </div>
         )}
       </main>
