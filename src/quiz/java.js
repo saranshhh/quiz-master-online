@@ -23,6 +23,7 @@ const initialState = {
   secondsRemaining: 300,
   numbersQs: 10,
   negative: false,
+  difficulty: "easy", //easy, medium, hard
 };
 
 const SECS_PER_QUESTION = 30;
@@ -54,16 +55,24 @@ function reducer(state, action) {
     case "questionDisplay":
       return { ...state, status: "result", index: 0 };
     case "dataRecieved":
-      const questions = action.payload.map((question) => ({
-        ...question,
-        attempted: false,
-        attemptedOption: null,
-        seen: false,
-      }));
+      const questions = action.payload
+        .filter((question) => question.difficulty === state.difficulty)
+        .map((question) => ({
+          ...question,
+          attempted: false,
+          attemptedOption: null,
+          seen: false,
+        }));
+
       shuffleArray(questions);
+
       return { ...state, questions: questions, status: "ready" };
     case "dataFailed":
       return { ...state, status: "error" };
+    case "changesDifficulty":
+      console.log(action.payload);
+      return { ...state, difficulty: action.payload };
+      
     case "start":
       return {
         ...state,

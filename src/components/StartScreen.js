@@ -65,6 +65,21 @@ export default function StartScreen({
           </select>
         </div>
       </div>
+      <div>
+        <p className="fs-4">Select difficulty:</p>
+        <div className="text-center">
+          <select
+            className="btn home-bh mx-auto mb-3"
+            onChange={(e) =>
+              dispatch({ type: "changesDifficulty", payload: e.target.value })
+            }
+          >
+            <option value="easy">easy</option>
+            <option value="medium">medium</option>
+            <option value="hard">hard</option>
+          </select>
+        </div>
+      </div>
 
       <div className="text-center">
         <button

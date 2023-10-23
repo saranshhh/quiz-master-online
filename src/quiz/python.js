@@ -9,6 +9,9 @@ import Progress from "../components/Progress";
 import Timer from "../components/Timer";
 import FinishedScreen from "../components/FinishedScreen";
 import SideView from "../components/SideView";
+import ShowAttempted from "../components/ShowAttempted";
+import FinishSideView from "../components/FinishSideView";
+import BackButton from "../components/BackButton";
 
 const initialState = {
   questions: [],
@@ -16,8 +19,11 @@ const initialState = {
   index: 0,
   answer: null,
   points: 0,
+  wrong: 0,
   secondsRemaining: 300,
   numbersQs: 10,
+  negative: false,
+  difficulty: "easy", //easy, medium, hard
 };
 
 const SECS_PER_QUESTION = 30;
@@ -34,31 +40,67 @@ function shuffleArray(array) {
 
 function reducer(state, action) {
   switch (action.type) {
+    case "toggleNegativeMarking":
+      return { ...state, negative: action.payload };
+    case "resetOption":
+      return {
+        ...state,
+        answer: null,
+        questions: state.questions.map((q, i) => {
+          return i === state.index
+            ? { ...q, attempted: false, attemptedOption: null }
+            : q;
+        }),
+      };
+    case "questionDisplay":
+      return { ...state, status: "result", index: 0 };
     case "dataRecieved":
-      const questions = action.payload.map((question) => ({
-        ...question,
-        attempted: false,
-        attemptedOption: null,
-      }));
+      const questions = action.payload
+        .filter((question) => question.difficulty === state.difficulty)
+        .map((question) => ({
+          ...question,
+          attempted: false,
+          attemptedOption: null,
+          seen: false,
+        }));
+
       shuffleArray(questions);
+
       return { ...state, questions: questions, status: "ready" };
     case "dataFailed":
       return { ...state, status: "error" };
+    case "changesDifficulty":
+      console.log(action.payload);
+      return { ...state, difficulty: action.payload };
+
     case "start":
       return {
         ...state,
         status: "active",
         secondsRemaining: Number(state.numbersQs) * SECS_PER_QUESTION,
       };
+    case "result":
+      let correctAnswers = 0;
+      let wrongAnswers = 0;
+      state.questions.forEach((question) => {
+        if (question.correctOption === question.attemptedOption) {
+          correctAnswers++;
+        } else if (question.attemptedOption !== null) {
+          wrongAnswers++;
+        }
+      });
+      if (state.negative === true) {
+        correctAnswers *= 3;
+        correctAnswers = correctAnswers - wrongAnswers;
+      }
+      return { ...state, wrong: wrongAnswers, points: correctAnswers };
+
     case "newanswer":
-      const question = state.questions[state.index];
+      //const question = state.questions[state.index];
       return {
         ...state,
         answer: action.payload,
-        points:
-          action.payload === question.correctOption
-            ? state.points + question.points
-            : state.points,
+
         questions: state.questions.map((q, i) => {
           return i === state.index
             ? { ...q, attempted: true, attemptedOption: action.payload }
@@ -78,6 +120,7 @@ function reducer(state, action) {
           ...q,
           attempted: false,
           attemptedOption: null,
+          seen: false,
         })),
         status: "ready",
       };
@@ -95,22 +138,38 @@ function reducer(state, action) {
       };
     case "gotoQuestion":
       return { ...state, index: action.payload, answer: null };
+    case "gotoFinished":
+      return { ...state, status: "finished" };
     default:
       throw new Error("Unrecognized action");
   }
 }
 
-export default function Python({ quizStatus, cUser }) {
+export default function Python({ dis, cUser, quizStatus }) {
   const [
-    { index, questions, status, answer, points, secondsRemaining, numbersQs },
+    {
+      index,
+      questions,
+      status,
+      answer,
+      points,
+      secondsRemaining,
+      numbersQs,
+      wrong,
+      negative,
+    },
     dispatch,
   ] = useReducer(reducer, initialState);
 
   //const numberOfQuestions = questions.length;
-  const maxPossiblePoints = questions.reduce(
-    (prev, curr) => prev + curr.points,
-    0
-  );
+  // const maxPossiblePoints = questions.reduce(
+  //   (prev, curr) => prev + curr.points,
+  //   0
+  // );
+  let maxPossiblePoints = numbersQs;
+  if (negative === true) {
+    maxPossiblePoints *= 3;
+  }
 
   useEffect(function () {
     //
@@ -125,6 +184,7 @@ export default function Python({ quizStatus, cUser }) {
   return (
     <div>
       <main>
+        <BackButton dispatch={dis} status={status} dispatch1={dispatch} />
         {status === "loading" && <Loader />}
         {status === "error" && <Error />}
         {status === "ready" && (
@@ -134,11 +194,20 @@ export default function Python({ quizStatus, cUser }) {
               numQuestions={numbersQs}
               dispatch={dispatch}
               secondsRemaining={secondsRemaining}
+              cUser={cUser}
+              negative={negative}
             />
           </>
         )}
         {status === "active" && (
-          <>
+          <div
+            style={{
+              backgroundColor: "white",
+              padding: "3rem",
+              borderRadius: "3rem",
+              marginTop: "2rem",
+            }}
+          >
             <div
               style={{
                 display: "flex",
@@ -146,14 +215,17 @@ export default function Python({ quizStatus, cUser }) {
                 paddingBottom: "1rem",
               }}
             >
-              <PrevButton dispatch={dispatch} answer={answer} index={index} />
               <Timer dispatch={dispatch} secondsRemaining={secondsRemaining} />
-              <NextButton
-                dispatch={dispatch}
-                answer={answer}
-                index={index}
-                numQuestions={numbersQs}
-              />
+              <div className="d-flex">
+                <PrevButton dispatch={dispatch} answer={answer} index={index} />
+
+                <NextButton
+                  dispatch={dispatch}
+                  answer={answer}
+                  index={index}
+                  numQuestions={numbersQs}
+                />
+              </div>
             </div>
             <Progress
               index={index}
@@ -162,31 +234,94 @@ export default function Python({ quizStatus, cUser }) {
               maxPossiblePoints={maxPossiblePoints}
               answer={answer}
             />
-            <Question
-              question={questions[index]}
-              dispatch={dispatch}
-              answer={answer}
-            />
-
-            <SideView
-              numQuestions={numbersQs}
-              dispatch={dispatch}
-              index={index}
-              question={questions[index]}
-            />
-            <footer
-              style={{ display: "flex", justifyContent: "space-between" }}
-            ></footer>
-          </>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                paddingBottom: "1rem",
+              }}
+            >
+              <Question
+                question={questions[index]}
+                dispatch={dispatch}
+                answer={answer}
+              />
+              <SideView
+                numQuestions={numbersQs}
+                dispatch={dispatch}
+                index={index}
+                question={questions[index]}
+                questions={questions}
+              />
+            </div>
+          </div>
         )}
         {status === "finished" && (
-          <FinishedScreen
-            points={points}
-            maxPossiblePoints={maxPossiblePoints}
-            dispatch={dispatch}
-            quizStatus={quizStatus}
-            cUser={cUser}
-          />
+          <div
+            style={{
+              backgroundColor: "white",
+              padding: "3rem",
+              borderRadius: "3rem",
+              marginTop: "2rem",
+            }}
+          >
+            <FinishedScreen
+              points={points}
+              wrong={wrong}
+              negative={negative}
+              maxPossiblePoints={maxPossiblePoints}
+              dispatch={dispatch}
+              quizStatus={quizStatus}
+              cUser={cUser}
+            />
+          </div>
+        )}
+        {status === "result" && (
+          <div
+            style={{
+              backgroundColor: "white",
+              padding: "3rem",
+              borderRadius: "3rem",
+              marginTop: "2rem",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                paddingBottom: "1rem",
+              }}
+            >
+              <PrevButton dispatch={dispatch} answer={answer} index={index} />
+              <NextButton
+                dispatch={dispatch}
+                answer={answer}
+                index={index}
+                numQuestions={numbersQs}
+              />
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                paddingBottom: "1rem",
+              }}
+            >
+              <ShowAttempted
+                question={questions[index]}
+                dispatch={dispatch}
+                answer={answer}
+                index={index}
+              />
+              <FinishSideView
+                numQuestions={numbersQs}
+                dispatch={dispatch}
+                index={index}
+                question={questions[index]}
+                questions={questions}
+              />
+            </div>
+          </div>
         )}
       </main>
     </div>

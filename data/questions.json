@@ -562,6 +562,7 @@
           ],
           "correctOption": 1,
           "points": 10,
+          "difficulty": "hard",
           "code": null
       },
       {
@@ -574,6 +575,7 @@
           ],
           "correctOption": 3,
           "points": 10,
+          "difficulty": "hard",
           "code": null
       },
       {
@@ -586,6 +588,7 @@
           ],
           "correctOption": 2,
           "points": 10,
+          "difficulty": "hard",
           "code": null
       },
       {
@@ -598,6 +601,7 @@
           ],
           "correctOption": 1,
           "points": 10,
+          "difficulty": "hard",
           "code": null
       },
       {
@@ -610,6 +614,7 @@
           ],
           "correctOption": 2,
           "points": 10,
+          "difficulty": "hard",
           "code": null
       },
       {
@@ -622,6 +627,7 @@
           ],
           "correctOption": 3,
           "points": 10,
+          "difficulty": "hard",
           "code": null
       },
       {
@@ -634,6 +640,7 @@
           ],
           "correctOption": 0,
           "points": 10,
+          "difficulty": "hard",
           "code": "class output {\n    public static void main(String args[]) \n    {\n        double a, b, c;\n        a = 3.0/0;\n        b = 0/4.0;\n        c = 0/0.0;\n        System.out.println(a);\n        System.out.println(b);\n        System.out.println(c);\n    } \n}"
       },
       {
@@ -646,6 +653,7 @@
           ],
           "correctOption": 3,
           "points": 10,
+          "difficulty": "hard",
           "code": null
       },
       {
@@ -658,6 +666,7 @@
           ],
           "correctOption": 3,
           "points": 10,
+          "difficulty": "hard",
           "code": "\nclass output {\n    public static void main(String args[]) \n    {\n        double a, b, c;\n        a = 3.0/0;\n        b = 0/4.0;\n        c = 0/0.0;\n        System.out.println(a);\n        System.out.println(b);\n        System.out.println(c);\n    } \n}"
       },
       {
@@ -670,6 +679,7 @@
           ],
           "correctOption": 2,
           "points": 10,
+          "difficulty": "hard",
           "code": null
       }, 
         {
@@ -682,6 +692,7 @@
             ],
             "correctOption": 1,
             "points": 10,
+            "difficulty": "hard",
             "code": null
         },
         {
@@ -694,6 +705,7 @@
             ],
             "correctOption": 0,
             "points": 10,
+            "difficulty": "hard",
             "code": "\nclass variable_scope \n{\n    public static void main(String args[]) \n    {\n        int x;\n        x = 5;\n        {\n            int y = 6;\n            System.out.print(x + \" \" + y);\n        }\n        System.out.println(x + \" \" + y);\n    } \n}"
         },
         {
@@ -706,6 +718,7 @@
             ],
             "correctOption": 3,
             "points": 10,
+            "difficulty": "hard",
             "code": "\nbyte b = 50;\nb = b * 50;"
         },
         {
@@ -718,6 +731,7 @@
             ],
             "correctOption": 1,
             "points": 10,
+            "difficulty": "hard",
             "code": null
         },
         {
@@ -730,6 +744,7 @@
             ],
             "correctOption": 2,
             "points": 10,
+            "difficulty": "hard",
             "code": "\nclass leftshift_operator \n{\n    public static void main(String args[]) \n    {        \n         byte x = 64;\n         int i;\n         byte y; \n         i = x << 2;\n         y = (byte) (x << 2);\n         System.out.print(i + \" \" + y);\n    } \n}"
         },
         {
@@ -742,6 +757,7 @@
             ],
             "correctOption": 2,
             "points": 10,
+            "difficulty": "hard",
             "code": "\nclass box \n{\n    int width;\n    int height;\n    int length;\n} \nclass main\n{\n    public static void main(String args[]) \n    {        \n         box obj = new box();\n         obj.width = 10;\n         obj.height = 2;\n         obj.length = 10;\n         int y = obj.width * obj.height * obj.length; \n         System.out.print(y);\n    } \n}"
         },
         {
@@ -754,6 +770,7 @@
             ],
             "correctOption": 1,
             "points": 10,
+            "difficulty": "hard",
             "code": null
         },
         {
@@ -766,6 +783,7 @@
             ],
             "correctOption": 3,
             "points": 10,
+            "difficulty": "hard",
             "code": "\nclass Output \n{\n    public static void main(String args[]) \n    {\n        int arr[] = {1, 2, 3, 4, 5};\n        for ( int i = 0; i < arr.length - 2; ++i)\n            System.out.println(arr[i] + \" \");\n    } \n}"
         },
         {
@@ -778,6 +796,7 @@
             ],
             "correctOption": 0,
             "points": 10,
+            "difficulty": "medium",
             "code": "\nclass abc\n{\n    public static void main(String args[])\n    {\n        if(args.length>0)\n        System.out.println(args.length);\n    }\n}"
         },
         {
@@ -790,6 +809,7 @@
             ],
             "correctOption": 2,
             "points": 10,
+            "difficulty": "medium",
             "code": null
         },
         {
@@ -802,6 +822,7 @@
             ],
             "correctOption": 1,
             "points": 10,
+            "difficulty": "medium",
             "code": null
         },
         {
@@ -814,6 +835,7 @@
             ],
             "correctOption": 1,
             "points": 10,
+            "difficulty": "medium",
             "code": "\nclass Output \n{\n    public static void main(String args[]) \n    {\n        double x = 2.0;  \n        double y = 3.0;\n        double z = Math.pow( x, y );\n        System.out.print(z);\n    }\n}"
         },
         {
@@ -826,6 +848,7 @@
             ],
             "correctOption": 2,
             "points": 10,
+            "difficulty": "medium",
             "code": null
         },
         {
@@ -838,6 +861,7 @@
             ],
             "correctOption": 3,
             "points": 10,
+            "difficulty": "medium",
             "code": "\nclass output \n{\n    public static void main(String args[])\n    { \n       String c = \"Hello i love java\";\n       boolean var;\n       var = c.startsWith(\"hello\");\n       System.out.println(var);\n    }\n}"
         },
         {
@@ -850,6 +874,7 @@
             ],
             "correctOption": 2,
             "points": 10,
+            "difficulty": "medium",
             "code": null
         },
         {
@@ -862,6 +887,7 @@
             ],
             "correctOption": 3,
             "points": 10,
+            "difficulty": "medium",
             "code": "\nclass output \n{\n    public static void main(String args[])\n    { \n       StringBuffer s1 = new StringBuffer(\"Quiz\");\n       StringBuffer s2 = s1.reverse();\n       System.out.println(s2);\n    }\n}"
         },
         {
@@ -874,6 +900,7 @@
             ],
             "correctOption": 2,
             "points": 10,
+            "difficulty": "medium",
             "code": "\nclass Output \n{\n     public static void main(String args[]) \n     {\n          Integer i = new Integer(257);  \n          byte x = i.byteValue();\n          System.out.print(x);\n     }\n}"
         },
         {
@@ -886,6 +913,7 @@
             ],
             "correctOption": 0,
             "points": 10,
+            "difficulty": "medium",
             "code": "\nclass Output \n{\n     public static void main(String args[]) \n     {\n          URL obj = new URL(\"https://www.sanfoundry.com/javamcq\");\n          URLConnection obj1 = obj.openConnection();\n          int len = obj1.getContentLength();\n          System.out.print(len);\n     }\n}"
         },
         {
@@ -898,6 +926,7 @@
             ],
             "correctOption": 3,
             "points": 10,
+            "difficulty": "medium",
             "code": null
         },
         {
@@ -910,6 +939,7 @@
             ],
             "correctOption": 1,
             "points": 10,
+            "difficulty": "medium",
             "code": "\nclass newthread extends Thread\n{\n    Thread t;\n    newthread()\n    {\n        t1 = new Thread(this,\"Thread_1\");\n        t2 = new Thread(this,\"Thread_2\");\n        t1.start();\n        t2.start();\n    }\n    public void run()\n    {\n        t2.setPriority(Thread.MAX_PRIORITY);\n        System.out.print(t1.equals(t2));\n    }\n}\nclass multithreaded_programing\n{\n    public static void main(String args[])\n    {\n        new newthread();\n    }\n}"
         },
         {
@@ -922,6 +952,7 @@
             ],
             "correctOption": 1,
             "points": 10,
+            "difficulty": "medium",
             "code": null
         },
         {
@@ -934,6 +965,7 @@
             ],
             "correctOption": 0,
             "points": 10,
+            "difficulty": "medium",
             "code": "\nclass overload \n{\n    int x;\n    double y;\n    void add(int a , int b) \n    {\n        x = a + b;\n    }\n    void add(double c , double d)\n    {\n        y = c + d;\n    }\n    overload() \n    {\n        this.x = 0;\n        this.y = 0;\n    }\n}\nclass Overload_methods \n{\n    public static void main(String args[])\n    {\n        overload obj = new overload();   \n        int a = 2;\n        double b = 3.2;\n        obj.add(a, a);\n        obj.add(b, b);\n        System.out.println(obj.x + \" \" + obj.y);     \n    }\n}"
         },
         {
@@ -946,6 +978,7 @@
             ],
             "correctOption": 1,
             "points": 10,
+            "difficulty": "easy",
             "code": null
         },
         {
@@ -958,6 +991,7 @@
             ],
             "correctOption": 3,
             "points": 10,
+            "difficulty": "easy",
             "code": "\nfinal class A \n{\n    int i;\n}    \nclass B extends A \n{\n    int j;\n    System.out.println(j + \" \" + i);  \n}    \nclass inheritance \n{\n    public static void main(String args[])\n    {\n        B obj = new B();   \n        obj.display();     \n    }\n}"
         },
         {
@@ -970,6 +1004,7 @@
             ],
             "correctOption": 2,
             "points": 10,
+            "difficulty": "easy",
             "code": null
         },
         {
@@ -982,6 +1017,7 @@
             ],
             "correctOption": 3,
             "points": 10,
+            "difficulty": "easy",
             "code": null
         },
         {
@@ -994,6 +1030,7 @@
             ],
             "correctOption": 0,
             "points": 10,
+            "difficulty": "easy",
             "code": "\nclass overload \n{\n    int x;\n    double y;\n    void add(int a , int b) \n    {\n        x = a + b;\n    }\n    void add(double c , double d)\n    {\n        y = c + d;\n    }\n    overload() \n    {\n        this.x = 0;\n        this.y = 0;\n    }\n}\nclass Overload_methods \n{\n    public static void main(String args[])\n    {\n        overload obj = new overload();   \n        int a = 2;\n        double b = 3.2;\n        obj.add(a, a);\n        obj.add(b, b);\n        System.out.println(obj.x + \" \" + obj.y);     \n    }\n}"
         },
         {
@@ -1006,7 +1043,8 @@
             ],
             "correctOption": 1,
             "points": 10,
-            "code": null
+            "code": null,
+            "difficulty": "easy"
         },
         {
             "question": "What will be the output of the following Java code?",
@@ -1018,6 +1056,7 @@
             ],
             "correctOption": 3,
             "points": 10,
+            "difficulty": "easy",
             "code": "\nfinal class A \n{\n    int i;\n}    \nclass B extends A \n{\n    int j;\n    System.out.println(j + \" \" + i);  \n}    \nclass inheritance \n{\n    public static void main(String args[])\n    {\n        B obj = new B();   \n        obj.display();     \n    }\n}"
         },
         {
@@ -1030,6 +1069,7 @@
             ],
             "correctOption": 2,
             "points": 10,
+            "difficulty": "easy",
             "code": null
         },
         {
@@ -1042,6 +1082,7 @@
             ],
             "correctOption": 3,
             "points": 10,
+            "difficulty": "easy",
             "code": null
         },
         {
@@ -1054,6 +1095,7 @@
             ],
             "correctOption": 0,
             "points": 10,
+            "difficulty": "easy",
             "code": "\nclass Output \n{\n     public static void main(String args[]) \n     {\n          URL obj = new URL(\"https://www.sanfoundry.com/javamcq\");\n          URLConnection obj1 = obj.openConnection();\n          int len = obj1.getContentLength();\n          System.out.print(len);\n     }\n}"
         },
         {
@@ -1066,6 +1108,7 @@
             ],
             "correctOption": 3,
             "points": 10,
+            "difficulty": "easy",
             "code": null
         },
         {
@@ -1078,6 +1121,7 @@
             ],
             "correctOption": 1,
             "points": 10,
+            "difficulty": "easy",
             "code": "\nclass newthread extends Thread\n{\n    Thread t;\n    newthread()\n    {\n        t1 = new Thread(this,\"Thread_1\");\n        t2 = new Thread(this,\"Thread_2\");\n        t1.start();\n        t2.start();\n    }\n    public void run()\n    {\n        t2.setPriority(Thread.MAX_PRIORITY);\n        System.out.print(t1.equals(t2));\n    }\n}\nclass multithreaded_programing\n{\n    public static void main(String args[])\n    {\n        new newthread();\n    }\n}"
         },
         {
@@ -1090,6 +1134,7 @@
             ],
             "correctOption": 1,
             "points": 10,
+            "difficulty": "easy",
             "code": null
         },
           {
@@ -1102,6 +1147,7 @@
               ],
               "correctOption": "b",
               "points": 10,
+              "difficulty": "easy",
               "code": null
           },
           {
@@ -1114,6 +1160,7 @@
               ],
               "correctOption": "a",
               "points": 10,
+              "difficulty": "easy",
               "code": null
           },
           {
@@ -1126,6 +1173,7 @@
               ],
               "correctOption": "d",
               "points": 10,
+              "difficulty": "easy",
               "code": null
           },
           {
@@ -1138,6 +1186,7 @@
               ],
               "correctOption": "a",
               "points": 10,
+              "difficulty": "easy",
               "code": null
           },
           {
@@ -1150,7 +1199,8 @@
               ],
               "correctOption": "b",
               "points": 10,
-              "code": null
+              "code": null,
+              "difficulty": "easy"
           },
           {
               "question": "Which data type value is returned by all transcendental math functions?",
@@ -1162,13 +1212,16 @@
               ],
               "correctOption": "c",
               "points": 10,
+              "difficulty": "easy",
               "code": null
+              
           },
           {
               "question": "What will be the output of the following ",
               "options": [],
               "correctOption": "c",
               "points": 10,
+              "difficulty": "easy",
               "code": "class average {\n    public static void main(String args[]) {\n        double num[] = {5.5, 10.1, 11, 12.8, 56.9, 2.5};\n        double result;\n        result = 0;\n        for (int i = 0; i < 6; ++i)\n            result = result + num[i];\n        System.out.print(result/6);\n    }\n}"
           },
           {
@@ -1176,6 +1229,7 @@
               "options": [],
               "correctOption": "d",
               "points": 10,
+              "difficulty": "easy",
               "code": "class output {\n    public static void main(String args[]) {\n        double a, b, c;\n        a = 3.0/0;\n        b = 0/4.0;\n        c = 0/0.0;\n\n        System.out.println(a);\n        System.out.println(b);\n        System.out.println(c);\n    }\n}"
           },
           {
@@ -1183,6 +1237,7 @@
               "options": [],
               "correctOption": "c",
               "points": 10,
+              "difficulty": "easy",
               "code": "class increment {\n    public static void main(String args[]) {\n        int g = 3;\n        System.out.print(++g * 8);\n    }\n}"
           },
           {
@@ -1190,7 +1245,8 @@
               "options": [],
               "correctOption": "a",
               "points": 10,
-              "code": "class area {\n    public static void main(String args[]) {\n        double r, pi, a;\n        r = 9.8;\n        pi = 3.14;\n        a = pi * r * r;\n        System.out.println(a);\n    }\n}"
+              "code": "class area {\n    public static void main(String args[]) {\n        double r, pi, a;\n        r = 9.8;\n        pi = 3.14;\n        a = pi * r * r;\n        System.out.println(a);\n    }\n}",
+              "difficulty": "easy"
           }
         
     ]
