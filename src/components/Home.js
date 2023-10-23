@@ -23,6 +23,10 @@ function reducer(state, action) {
       return { ...state, status: "python" };
     case "setJava":
       return { ...state, status: "java" };
+    case "setOOP":
+      return { ...state, status: "OOP" };
+    case "setDBMS":
+      return { ...state, status: "DBMS" };
     case "goBack":
       return { ...state, status: "welcome" };
     default:
@@ -60,6 +64,12 @@ export default function Home() {
       {status === "webdev" && (
         <WebDev dis={dispatch} cUser={currUsername} quizStatus={status} />
       )}
+      {status === "OOP" && (
+        <Java dis={dispatch} cUser={currUsername} quizStatus={status} />
+      )}
+      {status === "DBMS" && (
+        <Java dis={dispatch} cUser={currUsername} quizStatus={status} />
+      )}
       {status === "java" && (
         <Java dis={dispatch} cUser={currUsername} quizStatus={status} />
       )}
@@ -82,7 +92,7 @@ export default function Home() {
               <Button
                 className="home-bh"
                 onClick={() => {
-                  dispatch({ type: "setWeb" });
+                  dispatch({ type: "setDBMS" });
                 }}
               >
                 DBMS
@@ -137,7 +147,7 @@ export default function Home() {
                 <Button
                   className="home-bh"
                   onClick={() => {
-                    dispatch({ type: "setWeb" });
+                    dispatch({ type: "setOOP" });
                   }}
                 >
                   OOP
