@@ -7,21 +7,16 @@ export default function SideView({
   question,
   questions,
 }) {
-  //const buttons = Array.from({ length: numQuestions }, (_, i) => i);
-  //console.log(questions);
   let newQuestions = [];
   for (let i = 0; i < numQuestions; i++) {
-    //console.log(questions[i].correctOption, questions[i].attemptedOption);
     newQuestions.push({
       value: i,
       correct: questions[i].correctOption === questions[i].attemptedOption,
       attempted: questions[i].attempted,
     });
   }
-  //console.log(newQuestions);
 
   const [hideButtons, setHideButtons] = useState(false);
-  //const [qq, setQq] = useState(newQuestions);
 
   const toggleHideButtons = () => {
     setHideButtons(!hideButtons);
@@ -35,8 +30,6 @@ export default function SideView({
         console.log(button);
         if (button) button.classList.add("correct-q");
 
-        // console.log(button, id, question["value"]);
-
         console.log(id, question["value"]);
       } else {
         // const button = document.querySelector(`#button`);
@@ -44,10 +37,6 @@ export default function SideView({
       }
     });
   }
-
-  // buttons.forEach((i) => {
-  //   addCorrectClass(i);
-  // });
 
   return (
     <div

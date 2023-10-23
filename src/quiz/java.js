@@ -248,15 +248,24 @@ export default function Java({ dis, cUser, quizStatus }) {
           </div>
         )}
         {status === "finished" && (
-          <FinishedScreen
-            points={points}
-            wrong={wrong}
-            negative={negative}
-            maxPossiblePoints={maxPossiblePoints}
-            dispatch={dispatch}
-            quizStatus={quizStatus}
-            cUser={cUser}
-          />
+          <div
+            style={{
+              backgroundColor: "white",
+              padding: "3rem",
+              borderRadius: "3rem",
+              marginTop: "2rem",
+            }}
+          >
+            <FinishedScreen
+              points={points}
+              wrong={wrong}
+              negative={negative}
+              maxPossiblePoints={maxPossiblePoints}
+              dispatch={dispatch}
+              quizStatus={quizStatus}
+              cUser={cUser}
+            />
+          </div>
         )}
         {status === "result" && (
           <div

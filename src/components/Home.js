@@ -41,6 +41,9 @@ export default function Home() {
     currUsername = currentUser.displayName;
   }
 
+  let nav = document.getElementById("nav");
+  if (nav) nav.classList.remove("hide-nav");
+
   const navigate = useNavigate();
 
   async function handleLogOut() {

@@ -61,38 +61,49 @@ export default function FinishedScreen({
   // };
 
   return (
-    <>
-      <p className="result">
+    <div
+      style={{
+        textAlign: "center",
+        backgroundColor: "#fff",
+        borderRadius: "3rem",
+        padding: "2rem",
+        marginTop: "2rem",
+      }}
+    >
+      <h1>Quiz Finished!</h1>
+      <h4 className="result">
         {emoji}You scored{" "}
         <strong>
           {points} out of {maxPossiblePoints} ({Math.round(percentage)}%)
           <br></br>
           {negative ? <span> with {wrong} wrong answers</span> : null}
           <br></br>
-          Score Overview:
-          <br></br>
-          Correct Answers: {negative ? points / 3 + wrong : points}
-          <br></br>
-          Wrong Answers: {wrong} <br></br>
-          Score: {points} <br></br>
-          Max Score: {maxPossiblePoints}
+          <h2>Score Overview:</h2>
         </strong>
-      </p>
-      <button
-        className="btn btn-ui"
-        onClick={() => dispatch({ type: "restart" })}
-      >
-        Restart
-      </button>
-      <button
-        className="btn btn-ui"
-        onClick={() => dispatch({ type: "questionDisplay" })}
-      >
-        Show Attempted Questions.
-      </button>
-      <div>Leaderboard</div>
+        Correct Answers: {negative ? points / 3 + wrong : points}
+        <br></br>
+        Wrong Answers: {wrong} <br></br>
+        Score: {points} <br></br>
+        Max Score: {maxPossiblePoints}
+      </h4>
+      <div className="d-flex flex-wrap justify-content-center">
+        <button
+          className="btn btn-ui"
+          onClick={() => dispatch({ type: "restart" })}
+        >
+          Restart
+        </button>
+        <button
+          className="btn btn-ui"
+          onClick={() => dispatch({ type: "questionDisplay" })}
+        >
+          Show Attempted Questions.
+        </button>{" "}
+      </div>
+
+      {/* <div>Leaderboard</div>
       {/* <button className="btn btn-ui">Show Leaderboard</button> */}
-      <table>
+      {/* <table>
         <thead>
           <tr>
             <th>Email</th>
@@ -117,7 +128,7 @@ export default function FinishedScreen({
             <td>{maxPossiblePoints}</td>
           </tr>
         </tbody>
-      </table>
-    </>
+      </table>  */}
+    </div>
   );
 }
