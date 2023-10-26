@@ -21,7 +21,7 @@ function LogIn() {
       setLoading(true);
       console.log(emailref.current.value, passwordref.current.value);
       await login(emailref.current.value, passwordref.current.value);
-      setMessage("Logged in successfully.");
+      setMessage("Authenticating...");
       navigate("/");
     } catch {
       setError("Failed to sign in.");
