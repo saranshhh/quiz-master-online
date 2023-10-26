@@ -31,25 +31,13 @@ function AppNavbar() {
               Home
             </Nav.Link>
 
-            <Nav.Link
-              className="mr-3"
-              style={{ fontSize: "1.5rem" }}
-              href="/browse"
-            >
+            <Nav.Link className="mr-3" style={{ fontSize: "1.5rem" }} href="/">
               About
             </Nav.Link>
-            <Nav.Link
-              className="mr-3"
-              style={{ fontSize: "1.5rem" }}
-              href="/my-quizzes"
-            >
+            <Nav.Link className="mr-3" style={{ fontSize: "1.5rem" }} href="/">
               Guidelines
             </Nav.Link>
-            <Nav.Link
-              className="mr-3"
-              style={{ fontSize: "1.5rem" }}
-              href="/my-quizzes"
-            >
+            <Nav.Link className="mr-3" style={{ fontSize: "1.5rem" }} href="/">
               Contact Us
             </Nav.Link>
           </Nav>

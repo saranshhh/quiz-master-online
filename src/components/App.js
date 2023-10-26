@@ -7,6 +7,7 @@ import PrivateRoute from "./PrivateRoute";
 import Home from "./Home";
 import LogIn from "./Login";
 import Forgot from "./Forgot";
+import AdminLog from "./AdminLog";
 // import WebDev from "../quiz/webdev";
 // import Java from "../quiz/java";
 // import Python from "../quiz/python";
@@ -18,10 +19,7 @@ function App() {
     <>
       <AppNavBar />
 
-      <Container
-        
-        style={{ minHeight: "75vh" }}
-      >
+      <Container style={{ minHeight: "75vh" }}>
         <div>
           <BrowserRouter>
             <AuthProvider>
@@ -36,6 +34,8 @@ function App() {
                 ></Route>
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/login" element={<LogIn />} />
+                <Route path="/admin" element={<AdminLog />} />
+
                 <Route path="/forgot-password" element={<Forgot />} />
                 {/* <Route path="/web-dev-quiz" element={<WebDev />} />
                 <Route path="/java-quiz" element={<Java />} />

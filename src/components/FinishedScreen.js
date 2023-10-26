@@ -78,10 +78,9 @@ export default function FinishedScreen({
           <br></br>
           {negative ? <span> with {wrong} wrong answers</span> : null}
           <br></br>
+          <br></br>
           <h2>Score Overview:</h2>
         </strong>
-        Correct Answers: {negative ? points / 3 + wrong : points}
-        <br></br>
         Wrong Answers: {wrong} <br></br>
         Score: {points} <br></br>
         Max Score: {maxPossiblePoints}

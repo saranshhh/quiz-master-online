@@ -4,7 +4,7 @@ import { Form, Card, Button, Alert } from "react-bootstrap";
 import { useAuth } from "../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 
-function LogIn() {
+function AdminLog() {
   const emailref = useRef();
   const passwordref = useRef();
   const { login } = useAuth();
@@ -15,17 +15,28 @@ function LogIn() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    //admin: admin@gmail
+    //apssword: admin123
 
-    try {
-      setError("");
-      setLoading(true);
-      console.log(emailref.current.value, passwordref.current.value);
-      await login(emailref.current.value, passwordref.current.value);
+    setError("");
+    setLoading(true);
+    console.log(emailref.current.value, passwordref.current.value);
+    await login(emailref.current.value, passwordref.current.value);
+    if (
+      emailref.current.value === "admin@gmail" &&
+      passwordref.current.value === "admin123"
+    ) {
       setMessage("Logged in successfully.");
-      navigate("/");
-    } catch {
+
+      return (
+        <div>
+          <p>Admin Dashboard</p>
+        </div>
+      );
+    } else {
       setError("Failed to sign in.");
     }
+
     setLoading(false);
   }
 
@@ -80,14 +91,9 @@ function LogIn() {
               Log In
             </Button>
           </Form>
-          <div className="w-100 text-center mt-3 fs-5 log-text">
-            <Link to="/forgot-password">Forgot Password?</Link>
-          </div>
+
           <div className="w-100 text-center mt-2 fs-5  log-text">
-            Need an account? <Link to="/signup">Sign Up</Link>
-          </div>
-          <div className="w-100 text-center mt-2 fs-5  log-text">
-            Admin? <Link to="/admin">Admin Login</Link>
+            User? <Link to="/login">Log In</Link>
           </div>
         </Card.Body>
       </Card>
@@ -95,4 +101,4 @@ function LogIn() {
   );
 }
 
-export default LogIn;
+export default AdminLog;

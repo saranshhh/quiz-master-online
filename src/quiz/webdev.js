@@ -56,7 +56,7 @@ function reducer(state, action) {
       return { ...state, status: "result", index: 0 };
     case "dataRecieved":
       const questions = action.payload
-        .filter((question) => question.difficulty === state.difficulty)
+        // .filter((question) => question.difficulty === state.difficulty)
         .map((question) => ({
           ...question,
           attempted: false,
